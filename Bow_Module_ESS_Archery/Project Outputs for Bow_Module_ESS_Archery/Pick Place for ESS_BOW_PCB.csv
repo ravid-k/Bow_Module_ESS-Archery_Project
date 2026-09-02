@@ -1,0 +1,60 @@
+Altium Designer Pick and Place Locations
+C:\Users\miiri\Desktop\RAVI_FILES\Altium_Projects\Electronics_In_Sports_Project\Bow_Module_ESS-Archery\Bow_Module_ESS_Archery\Project Outputs for Bow_Module_ESS_Archery\Pick Place for ESS_BOW_PCB.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       29/08/26
+Time:       10:18
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+"Designator","Comment","Layer","Footprint","Center-X(mil)","Center-Y(mil)","Rotation","Description"
+"C2x","Comment","TopLayer","CAP_0603_1608","4185.000","2835.000","180",""
+"TP_VBUS","Comment","TopLayer","Test_Pad","4480.000","2750.000","0",""
+"IC4","ESP32-C3-MINI-1-N4X","TopLayer","ESP32C3MINI1N4X","3460.000","3751.024","0","Integrated Circuit"
+"D1","Green","TopLayer","LED_0805_2012_GREEN","3551.339","2820.590","0","LED GREEN CLEAR 0805 SMD"
+"TP_3V3","","TopLayer","Test_Pad","3650.000","3000.000","90","Test point 1.5mm"
+"J_BAT","S2B-PH-SM4-TB(LF)(SN)_1","TopLayer","JST_S2B-PH-SM4-TB(LF)(SN)","4616.811","3023.110","90","Connector Header Surface Mount, Right Angle 2 position 0.079 (2.00mm)"
+"TP_STUS","","TopLayer","Test_Pad","4170.000","3190.000","90","Test point 1.5mm"
+"TP_GATE","","TopLayer","Test_Pad","3237.402","3327.402","90","Test point 1.5mm"
+"TP_EN","Test Point","TopLayer","Test_Pad","2975.000","3660.000","90","Test point 1.5mm"
+"TP_CHG","","TopLayer","Test_Pad","4090.000","3190.000","90","Test point 1.5mm"
+"TP_Boot","","TopLayer","Test_Pad","3720.000","3370.000","90","Test point 1.5mm"
+"SW1","PCM12SMTR","TopLayer","SW_PCM12SMTR","3855.945","2785.453","0","Slide Switch SPDT Surface Mount, Right Angle"
+"S1","TS04-66-43-BK-100-SMT","TopLayer","TS046643BK100SMT","4194.134","3678.583","0","Switch"
+"R16","100 kOhms","TopLayer","RES_0603_1608","3355.000","3260.000","180","RES 100K OHM 0.1% 1/16W 0603"
+"R15","100 Ohms","TopLayer","RES_0603_1608","3355.000","3330.000","180","RES 100 OHM 0.1% 1/16W 0603"
+"R14","3.9 Ohms","TopLayer","RES_0603_1608","3375.000","2890.000","90","RES SMD 3.9 OHM 5% 1/10W 0603"
+"R13","10 kOhms","TopLayer","RES_0603_1608","3870.000","3730.000","90","RES 10K OHM 0.1% 1/16W 0603"
+"R12","1 kOhms","TopLayer","RES_0603_1608","3510.000","2920.590","270","RES SMD 1K OHM 0.1% 1/16W 0603"
+"R11","10 kOhms","TopLayer","RES_0603_1608","3704.409","3310.000","180","RES 10K OHM 0.1% 1/16W 0603"
+"R10","22 Ohms","TopLayer","RES_0603_1608","3925.000","3455.000","90","RES SMD 22 OHM 1% 1/10W 0603"
+"R9","22 Ohms","TopLayer","RES_0603_1608","3850.000","3420.000","90","RES SMD 22 OHM 1% 1/10W 0603"
+"R8","10 kOhms","TopLayer","RES_0603_1608","3715.590","3435.000","0","RES 10K OHM 0.1% 1/16W 0603"
+"R7","10 kOhms","TopLayer","RES_0603_1608","3050.000","3635.000","270","RES 10K OHM 0.1% 1/16W 0603"
+"R6","5.9 kOhms","TopLayer","RES_0603_1608","4280.000","2870.000","270","RES SMD 5.9K OHM 1% 1/16W 0603"
+"R5","3.3 kOhms","TopLayer","RES_0603_1608","4125.000","2920.591","270","RES 3.3K OHM 1% 1/4W 0603"
+"R4","0 Ohms","TopLayer","RES_0603_1608","4250.000","3185.000","270","RCS0603 0R0 ET6 E3"
+"R3","10 kOhms","TopLayer","RES_0603_1608","4360.000","2865.000","90","RES 10K OHM 0.1% 1/16W 0603"
+"R2","5.1 kOhms","TopLayer","RES_0603_1608","4410.000","3505.000","0","RES 5.1K OHM 5% 1/10W 0603"
+"R1","5.1 kOhms","TopLayer","RES_0603_1608","4435.000","3320.000","180","RES 5.1K OHM 5% 1/10W 0603"
+"Q1","AO3400A","TopLayer","SOT95P280X125-3N","3200.000","3205.000","270","MOSFET (N-Channel)"
+"J1","USB4105-GF-A-060","TopLayer","GCT_USB4105-GF-A-060","4681.398","3430.000","90","USB-C (USB TYPE-C) USB 2.0 Receptacle Connector 24 (16+8 Dummy) Position Surface Mount, Right Angle; Through Hole"
+"j2","282834-2","TopLayer","TE_282834-2","3200.000","2875.000","180","TERM BLK 2P SIDE ENT 2.54MM PCB"
+"IC5","LSM6DSOXTR","TopLayer","LGA-14_1","3655.276","3204.528","0","Accelerometer"
+"IC3","TLV75533PDBVR","TopLayer","SOT95P280X145-5N","3930.000","3035.000","180","Integrated Circuit"
+"IC2","BQ24074RGTR_1","TopLayer","QFN50P300X300X100-17N","4248.504","3014.843","180","Standalone 1-cell 1.5-A linear battery charger, Power Path, 4.2-V VBAT, 10.5-V OVP and 4.4-V VOUT"
+"IC1","USBLC6-2SC6","TopLayer","SOT95P280X145-6N","4270.000","3390.000","180","Integrated Circuit"
+"D2","BAT54WS-E3-08","TopLayer","SOD2713X115N","3205.000","3065.000","0","Diode"
+"C10","0.1 µF","TopLayer","CAP_0603_1608","3565.000","3095.000","180","CAP CER 100NF 100V X8L 0603"
+"C9","0.1 µF","TopLayer","CAP_0603_1608","3781.575","3180.000","180","CAP CER 100NF 100V X8L 0603"
+"C8","1 µF","TopLayer","CAP_0603_1608","3115.000","3633.425","90","CAP CER 1UF 16V X7R 0603"
+"C7","10 µF","TopLayer","CAP_0603_1608","3105.000","3890.000","0","CAP CER 10UF 4V X5R 0603"
+"C6","0.1 µF","TopLayer","CAP_0603_1608","3105.000","3825.000","0","CAP CER 100NF 100V X8L 0603"
+"C5","4.7 µF","TopLayer","CAP_0603_1608","4045.000","2970.000","270","CAP CER 4.7UF 25V X5R 0603"
+"C4","10 µF","TopLayer","CAP_0603_1608","3735.000","2970.000","90","CAP CER 10UF 6.3V X5R 0603"
+"C3","0.1 µF","TopLayer","CAP_0603_1608","3805.000","2970.000","90","CAP CER 100NF 100V X8L 0603"
+"C2","10 µF","TopLayer","CAP_0603_1608","4110.000","3043.425","270","CAP CER 10UF 6.3V X5R 0603"
+"C1","10 µF","TopLayer","CAP_0603_1608","4370.000","3048.425","270","CAP CER 10UF 6.3V X5R 0603"

@@ -1,0 +1,1291 @@
+UNITS=MM
+#
+#Component attribute names
+#
+@0 .comp_mount_type
+@1 .comp_height
+@2 .no_pop
+@3 .comp_ignore
+@4 .comp_variant_list
+@5 .placement_layer
+
+#
+#Component attribute text strings
+#
+&0 top_layer
+
+# CMP 0
+CMP 0 106.299 72.009 180 N C2x Comment ;0=1,1=0.8900,2,3,5=0
+TOP 0 106.97399992 72.009 90 N 33 5 1
+TOP 1 105.62400008 72.009 90 N 3 41 2
+#
+# CMP 1
+CMP 14 113.919 68.961 0 N TP_VBUS Comment ;0=1,1=0.0000,2,3,5=0
+TOP 0 113.792 69.85 0 N 33 4 3
+TOP 1 113.792 69.85 0 N 33 7 4
+#
+# CMP 2
+CMP 1 87.884 97.97599912 0 N IC4 ESP32-C3-MINI-1-N4X ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://www.digikey.com/en/products/detail/espressif-systems/ESP32-C3-MINI-1-N4X/27525554'
+PRP Height '2.55mm'
+PRP Manufacturer_Name 'Espressif Systems'
+PRP Manufacturer_Part_Number 'ESP32-C3-MINI-1-N4X'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 81.9839991 99.27599906 0 N 3 40 1
+TOP 1 81.9839991 98.47599812 0 N 3 43 2
+TOP 2 81.9839991 97.67599972 0 N 1 6 3
+TOP 3 81.9839991 96.87599878 0 N 0 24 4
+TOP 4 81.9839991 96.07600038 0 N 0 23 5
+TOP 5 81.9839991 95.27599944 0 N 12 1 6
+TOP 6 81.9839991 94.4759985 0 N 0 26 7
+TOP 7 81.9839991 93.6760001 0 N 13 3 8
+TOP 8 81.9839991 92.87599916 0 N 0 25 9
+TOP 9 81.9839991 92.07599822 0 N 0 22 10
+TOP 10 81.9839991 91.27599982 0 N 3 42 11
+TOP 11 83.08399944 90.37599908 270 N 28 2 12
+TOP 12 83.88400038 90.37599908 270 N 4 1 13
+TOP 13 84.68399878 90.37599908 270 N 3 37 14
+TOP 14 85.48399972 90.37599908 270 N 0 19 15
+TOP 15 86.28400066 90.37599908 270 N 8 1 16
+TOP 16 87.08399906 90.37599908 270 N 0 18 17
+TOP 17 87.884 90.37599908 270 N 10 1 18
+TOP 18 88.68400094 90.37599908 270 N 9 1 19
+TOP 19 89.48399934 90.37599908 270 N 11 1 20
+TOP 20 90.28400028 90.37599908 270 N 7 2 21
+TOP 21 91.08400122 90.37599908 270 N 0 21 22
+TOP 22 91.88399962 90.37599908 270 N 22 2 23
+TOP 23 92.68400056 90.37599908 270 N 0 20 24
+TOP 24 93.7840009 91.27599982 0 N 0 33 25
+TOP 25 93.7840009 92.07599822 0 N 23 1 26
+TOP 26 93.7840009 92.87599916 0 N 24 1 27
+TOP 27 93.7840009 93.6760001 0 N 0 32 28
+TOP 28 93.7840009 94.4759985 0 N 0 35 29
+TOP 29 93.7840009 95.27599944 0 N 0 34 30
+TOP 30 93.7840009 96.07600038 0 N 0 31 31
+TOP 31 93.7840009 96.87599878 0 N 0 28 32
+TOP 32 93.7840009 97.67599972 0 N 0 27 33
+TOP 33 93.7840009 98.47599812 0 N 0 30 34
+TOP 34 93.7840009 99.27599906 0 N 0 29 35
+TOP 35 92.68400056 100.1759998 270 N 3 36 36
+TOP 36 91.88399962 100.1759998 270 N 3 39 37
+TOP 37 91.08400122 100.1759998 270 N 3 38 38
+TOP 38 90.28400028 100.1759998 270 N 3 44 39
+TOP 39 89.48399934 100.1759998 270 N 3 50 40
+TOP 40 88.68400094 100.1759998 270 N 3 52 41
+TOP 41 87.884 100.1759998 270 N 3 51 42
+TOP 42 87.08399906 100.1759998 270 N 3 46 43
+TOP 43 86.28400066 100.1759998 270 N 3 48 44
+TOP 44 85.48399972 100.1759998 270 N 3 23 45
+TOP 45 84.68399878 100.1759998 270 N 3 26 46
+TOP 46 83.88400038 100.1759998 270 N 3 25 47
+TOP 47 83.08399944 100.1759998 270 N 3 20 48
+TOP 48 87.884 95.27599944 0 N 3 19 49
+TOP 49 93.8340008 100.2259997 0 N 3 65 50
+TOP 50 93.8340008 90.32599918 0 N 3 66 51
+TOP 51 81.9339992 90.32599918 0 N 3 63 52
+TOP 52 81.9339992 100.2259997 0 N 3 64 53
+TOP 53 85.90900014 97.2509993 0 N 3 69 54
+TOP 54 85.90900014 95.27599944 0 N 3 70 55
+TOP 55 85.90900014 93.30099958 0 N 3 67 56
+TOP 56 87.884 93.30099958 0 N 3 68 57
+TOP 57 89.85899986 93.30099958 0 N 3 62 58
+TOP 58 89.85899986 95.27599944 0 N 3 56 59
+TOP 59 89.85899986 97.2509993 0 N 3 57 60
+TOP 60 87.884 97.2509993 0 N 3 54 61
+#
+# CMP 3
+CMP 4 90.20400044 71.6429987 0 N D1 Green ;0=1,1=0.7000,5=0
+PRP Color 'Green'
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url '//media.digikey.com/PDF/Data%20Sheets/Everlight%20PDFs/QTLP630-2.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/QTLP630C4TR/2675902'
+PRP Configuration 'Standard'
+PRP Current_-_Test '20mA'
+PRP Device_Package '0805 (2012 Metric)'
+PRP Height_(Max) '1.20mm'
+PRP lastupdated '05/04/2026 20:39:04'
+PRP Lens_Color 'Colorless'
+PRP Lens_Size '1.40mm x 1.25mm'
+PRP Lens_Style 'Rectangle with Flat Top'
+PRP Lens_Transparency 'Clear'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Everlight Electronics Co Ltd'
+PRP Millicandela_Rating '10mcd'
+PRP Minimum_Order '1'
+PRP Mounting_Type 'Surface Mount'
+PRP Package_/_Case '0805 (2012 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'QTLP630C4TR'
+PRP Part_Status 'Active'
+PRP partid '240'
+PRP price '0.05'
+PRP series '-'
+PRP Size_/_Dimension '2.00mm L x 1.25mm W'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0805'
+PRP Supplier_Part_Number_1 '1080-1411-1-ND'
+PRP value 'Green'
+PRP Viewing_Angle '140°'
+PRP Voltage_-_Forward_(Vf)_(Typ) '2.1V'
+PRP Wavelength_-_Dominant '570nm'
+PRP Wavelength_-_Peak '565nm'
+TOP 0 89.154 71.6429987 270 N 15 0 1
+TOP 1 91.25400088 71.6429987 270 N 3 33 2
+#
+# CMP 4
+CMP 14 93.599 76.327 270 N TP_3V3 empty_part_name ;0=1,1=0.0000,5=0
+TOP 0 92.71 76.2 270 N 1 17 3
+TOP 1 92.71 76.2 270 N 1 3 4
+#
+# CMP 5
+CMP 3 114.3919988 76.78699908 270 N J_BAT S2B-PH-SM4-TB(LF)(SN)_1 ;0=1,1=0.0000,5=0
+PRP Check_prices 'https://www.snapeda.com/parts/S2B-PH-SM4-TB(LF)(SN)/JST+Sales+America+Inc./view-part/?ref=eda'
+PRP Digi-Key_Part_Number '455-1749-2-ND'
+PRP MF 'JST Sales'
+PRP MP 'S2B-PH-SM4-TB(LF)(SN)'
+PRP Package 'None'
+PRP Purchase-URL 'https://pricing.snapeda.com/search/part/S2B-PH-SM4-TB(LF)(SN)/?ref=eda'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/S2B-PH-SM4-TB(LF)(SN)/JST+Sales+America+Inc./view-part/?ref=snap'
+PRP value ''
+TOP 0 114.3919988 75.78699854 90 N 34 2 1
+TOP 1 114.3919988 77.78699962 90 N 3 81 2
+TOP 2 120.142 73.43699816 90 N 0 4 S1
+TOP 3 120.142 80.137 90 N 0 7 S2
+#
+# CMP 6
+CMP 14 106.807 81.153 270 N TP_STUS empty_part_name ;0=1,1=0.0000,5=0
+TOP 0 105.918 81.026 270 N 18 1 3
+TOP 1 105.918 81.026 270 N 18 0 4
+#
+# CMP 7
+CMP 14 83.11900064 84.64300064 270 N TP_GATE empty_part_name ;0=1,1=0.0000,5=0
+TOP 0 82.23000064 84.51600064 270 N 27 3 3
+TOP 1 82.23000064 84.51600064 270 N 27 4 4
+#
+# CMP 8
+CMP 14 76.454 93.091 270 N TP_EN Test_Point ;0=1,1=0.0000,5=0
+TOP 0 75.565 92.964 270 N 13 2 3
+TOP 1 75.565 92.964 270 N 13 4 4
+#
+# CMP 9
+CMP 14 104.775 81.153 270 N TP_CHG empty_part_name ;0=1,1=0.0000,5=0
+TOP 0 103.886 81.026 270 N 19 1 3
+TOP 1 103.886 81.026 270 N 19 0 4
+#
+# CMP 10
+CMP 14 95.377 85.725 270 N TP_Boot empty_part_name ;0=1,1=0.0000,5=0
+TOP 0 94.488 85.598 270 N 22 0 3
+TOP 1 94.488 85.598 270 N 22 1 4
+#
+# CMP 11
+CMP 12 97.94100046 70.358 0 N SW1 PCM12SMTR ;0=1,1=0.0000,5=0
+PRP Availability 'In Stock'
+PRP Check_prices 'https://www.snapeda.com/parts/PCM12SMTR/C%2526K/view-part/?ref=eda'
+PRP MF 'C&K'
+PRP MP 'PCM12SMTR'
+PRP Package 'None'
+PRP price 'None'
+PRP Purchase-URL 'https://pricing.snapeda.com/search/part/PCM12SMTR/?ref=eda'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/PCM12SMTR/C%2526K/view-part/?ref=snap'
+PRP value ''
+TOP 0 95.69099988 72.10799904 0 N 35 5 1
+TOP 1 98.6910015 72.10799904 0 N 2 1 2
+TOP 2 100.19100104 72.10799904 0 N 3 78 3
+TOP 3 99.441 70.358 0 N 0 10 empty-1
+TOP 4 96.44100092 70.358 0 N 0 9 empty-2
+TOP 5 94.29100014 71.32299934 0 N 0 0 S1
+TOP 6 94.29100014 69.39300066 0 N 0 2 S2
+TOP 7 101.59100078 69.39300066 0 N 0 3 S3
+TOP 8 101.59100078 71.32299934 0 N 0 1 S4
+#
+# CMP 12
+CMP 15 106.53100106 93.43600058 0 N S1 TS04-66-43-BK-100-SMT ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'TS04-66-43-BK-100-SMT'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/ts04-66-43-bk-100-smt/cui-devices?region=nac'
+PRP Datasheet_Link 'https://www.sameskydevices.com/product/resource/ts04.pdf'
+PRP Height '4.5mm'
+PRP Manufacturer_Name 'Same Sky'
+PRP Manufacturer_Part_Number 'TS04-66-43-BK-100-SMT'
+PRP Mouser_Part_Number '179-TS046643BK100SMT'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/Same-Sky/TS04-66-43-BK-100-SMT?qs=A6eO%252BMLsxmQLIFa%2FCOIqWw%3D%3D'
+TOP 0 101.981 95.68600116 0 N 28 0 1
+TOP 1 101.981 91.186 0 N 3 59 2
+TOP 2 111.08100212 95.68600116 0 N 28 3 3
+TOP 3 111.08100212 91.186 0 N 3 61 4
+#
+# CMP 13
+CMP 7 85.217 82.804 180 N R16 100_kOhms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.seielect.com/catalog/sei-rncs_rnch.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNCS0603BKE100K/1708835'
+PRP Composition 'Thin Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Anti-Corrosive, Automotive AEC-Q200, Moisture Resistant'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:37'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Stackpole Electronics Inc'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'RNCS0603BKE100K'
+PRP Part_Status 'Active'
+PRP partid '4849'
+PRP Power_(Watts) '0.063W, 1/16W'
+PRP price '0.06'
+PRP Ratings 'AEC-Q200'
+PRP Resistance '100 kOhms'
+PRP series 'RNCS'
+PRP Size_/_Dimension '0.061_ L x 0.031_ W (1.55mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 'RNCS0603BKE100KCT-ND'
+PRP Temperature_Coefficient '±25ppm/°C'
+PRP Tolerance '±0.1%'
+PRP value '100 kOhms'
+TOP 0 85.86700124 82.804 90 N 3 27 1
+TOP 1 84.5670013 82.804 90 N 27 2 2
+#
+# CMP 14
+CMP 7 85.217 84.582 180 N R15 100_Ohms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.seielect.com/catalog/sei-rncs_rnch.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNCS0603BKE100R/1799988'
+PRP Composition 'Thin Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Anti-Corrosive, Automotive AEC-Q200, Moisture Resistant'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:37'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Stackpole Electronics Inc'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'RNCS0603BKE100R'
+PRP Part_Status 'Active'
+PRP partid '4839'
+PRP Power_(Watts) '0.063W, 1/16W'
+PRP price '0.06'
+PRP Ratings 'AEC-Q200'
+PRP Resistance '100 Ohms'
+PRP series 'RNCS'
+PRP Size_/_Dimension '0.061_ L x 0.031_ W (1.55mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 'RNCS0603BKE100RCT-ND'
+PRP Temperature_Coefficient '±25ppm/°C'
+PRP Tolerance '±0.1%'
+PRP value '100 Ohms'
+TOP 0 85.86700124 84.582 90 N 4 0 1
+TOP 1 84.5670013 84.582 90 N 27 0 2
+#
+# CMP 15
+CMP 7 85.725 73.406 270 N R14 3.9_Ohms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'http://industrial.panasonic.com/www-cgi/jvcr13pz.cgi?E+PZ+3+AOA0001+ERJ3GEYJ3R9V+7+WW'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3GEYJ3R9V/282125'
+PRP Composition 'Thick Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Automotive AEC-Q200'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:05'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Panasonic Electronic Components'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'ERJ-3GEYJ3R9V'
+PRP Part_Status 'Active'
+PRP partid '12836'
+PRP Power_(Watts) '0.1W, 1/10W'
+PRP price '0.01'
+PRP Ratings 'AEC-Q200'
+PRP Resistance '3.9 Ohms'
+PRP series 'ERJ-3G'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 'P3.9GCT-ND'
+PRP Temperature_Coefficient '-100/ +600ppm/°C'
+PRP Tolerance '±5%'
+PRP value '3.9 Ohms'
+TOP 0 85.725 72.75599876 180 N 6 1 1
+TOP 1 85.725 74.0559987 180 N 1 5 2
+#
+# CMP 16
+CMP 7 98.298 94.742 270 N R13 10_kOhms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.seielect.com/catalog/sei-rncs_rnch.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNCS0603BKE10K0/1708836'
+PRP Composition 'Thin Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Anti-Corrosive, Automotive AEC-Q200, Moisture Resistant'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:37'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Stackpole Electronics Inc'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'RNCS0603BKE10K0'
+PRP Part_Status 'Active'
+PRP partid '4838'
+PRP Power_(Watts) '0.063W, 1/16W'
+PRP price '0.06'
+PRP Ratings 'AEC-Q200'
+PRP Resistance '10 kOhms'
+PRP series 'RNCS'
+PRP Size_/_Dimension '0.061_ L x 0.031_ W (1.55mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 'RNCS0603BKE10K0CT-ND'
+PRP Temperature_Coefficient '±25ppm/°C'
+PRP Tolerance '±0.1%'
+PRP value '10 kOhms'
+TOP 0 98.298 94.09199876 180 N 1 12 1
+TOP 1 98.298 95.3919987 180 N 28 1 2
+#
+# CMP 17
+CMP 7 89.154 74.1829987 90 N R12 1_kOhms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773200&DocType=DS&DocLang=English'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/te-connectivity-passive-product/CPF0603B1K0E/2390473'
+PRP Composition 'Thin Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:37'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'TE Connectivity Passive Product'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'CPF0603B1K0E'
+PRP Part_Status 'Active'
+PRP partid '4877'
+PRP Power_(Watts) '0.063W, 1/16W'
+PRP price '0.09'
+PRP Resistance '1 kOhms'
+PRP series 'CPF, Neohm'
+PRP Size_/_Dimension '0.061_ L x 0.031_ W (1.55mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 'A119887CT-ND'
+PRP Temperature_Coefficient '±25ppm/°C'
+PRP Tolerance '±0.1%'
+PRP value '1 kOhms'
+TOP 0 89.154 74.83299994 0 N 12 0 1
+TOP 1 89.154 73.533 0 N 15 1 2
+#
+# CMP 18
+CMP 7 94.09199876 84.074 180 N R11 10_kOhms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.seielect.com/catalog/sei-rncs_rnch.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNCS0603BKE10K0/1708836'
+PRP Composition 'Thin Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Anti-Corrosive, Automotive AEC-Q200, Moisture Resistant'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:37'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Stackpole Electronics Inc'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'RNCS0603BKE10K0'
+PRP Part_Status 'Active'
+PRP partid '4838'
+PRP Power_(Watts) '0.063W, 1/16W'
+PRP price '0.06'
+PRP Ratings 'AEC-Q200'
+PRP Resistance '10 kOhms'
+PRP series 'RNCS'
+PRP Size_/_Dimension '0.061_ L x 0.031_ W (1.55mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 'RNCS0603BKE10K0CT-ND'
+PRP Temperature_Coefficient '±25ppm/°C'
+PRP Tolerance '±0.1%'
+PRP value '10 kOhms'
+TOP 0 94.742 84.074 90 N 1 10 1
+TOP 1 93.44200006 84.074 90 N 7 1 2
+#
+# CMP 19
+CMP 7 99.695 87.757 270 N R10 22_Ohms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF22R0V/1746340'
+PRP Composition 'Thick Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Automotive AEC-Q200'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:34'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Panasonic Electronic Components'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'ERJ-3EKF22R0V'
+PRP Part_Status 'Active'
+PRP partid '5655'
+PRP Power_(Watts) '0.1W, 1/10W'
+PRP price '0.01'
+PRP Ratings 'AEC-Q200'
+PRP Resistance '22 Ohms'
+PRP series 'ERJ-3EK'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 'P22.0HCT-ND'
+PRP Temperature_Coefficient '±100ppm/°C'
+PRP Tolerance '±1%'
+PRP value '22 Ohms'
+TOP 0 99.695 87.10699876 180 N 32 0 1
+TOP 1 99.695 88.4069987 180 N 24 0 2
+#
+# CMP 20
+CMP 7 97.79 86.868 270 N R9 22_Ohms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF22R0V/1746340'
+PRP Composition 'Thick Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Automotive AEC-Q200'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:34'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Panasonic Electronic Components'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'ERJ-3EKF22R0V'
+PRP Part_Status 'Active'
+PRP partid '5655'
+PRP Power_(Watts) '0.1W, 1/10W'
+PRP price '0.01'
+PRP Ratings 'AEC-Q200'
+PRP Resistance '22 Ohms'
+PRP series 'ERJ-3EK'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 'P22.0HCT-ND'
+PRP Temperature_Coefficient '±100ppm/°C'
+PRP Tolerance '±1%'
+PRP value '22 Ohms'
+TOP 0 97.79 86.21799876 180 N 30 0 1
+TOP 1 97.79 87.5179987 180 N 23 0 2
+#
+# CMP 21
+CMP 7 94.37600124 87.249 0 N R8 10_kOhms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.seielect.com/catalog/sei-rncs_rnch.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNCS0603BKE10K0/1708836'
+PRP Composition 'Thin Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Anti-Corrosive, Automotive AEC-Q200, Moisture Resistant'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:37'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Stackpole Electronics Inc'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'RNCS0603BKE10K0'
+PRP Part_Status 'Active'
+PRP partid '4838'
+PRP Power_(Watts) '0.063W, 1/16W'
+PRP price '0.06'
+PRP Ratings 'AEC-Q200'
+PRP Resistance '10 kOhms'
+PRP series 'RNCS'
+PRP Size_/_Dimension '0.061_ L x 0.031_ W (1.55mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 'RNCS0603BKE10K0CT-ND'
+PRP Temperature_Coefficient '±25ppm/°C'
+PRP Tolerance '±0.1%'
+PRP value '10 kOhms'
+TOP 0 93.726 87.249 270 N 22 3 1
+TOP 1 95.02599994 87.249 270 N 1 13 2
+#
+# CMP 22
+CMP 7 77.47 92.329 90 N R7 10_kOhms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.seielect.com/catalog/sei-rncs_rnch.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNCS0603BKE10K0/1708836'
+PRP Composition 'Thin Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Anti-Corrosive, Automotive AEC-Q200, Moisture Resistant'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:37'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Stackpole Electronics Inc'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'RNCS0603BKE10K0'
+PRP Part_Status 'Active'
+PRP partid '4838'
+PRP Power_(Watts) '0.063W, 1/16W'
+PRP price '0.06'
+PRP Ratings 'AEC-Q200'
+PRP Resistance '10 kOhms'
+PRP series 'RNCS'
+PRP Size_/_Dimension '0.061_ L x 0.031_ W (1.55mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 'RNCS0603BKE10K0CT-ND'
+PRP Temperature_Coefficient '±25ppm/°C'
+PRP Tolerance '±0.1%'
+PRP value '10 kOhms'
+TOP 0 77.47 92.97900124 0 N 13 0 1
+TOP 1 77.47 91.6790013 0 N 1 7 2
+#
+# CMP 23
+CMP 7 108.712 72.898 90 N R6 5.9_kOhms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773200&DocType=DS&DocLang=English'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/te-connectivity-passive-product/CPF0603F5K9C1/2384526'
+PRP Composition 'Thin Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:28'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'TE Connectivity Passive Product'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'CPF0603F5K9C1'
+PRP Part_Status 'Active'
+PRP partid '7049'
+PRP Power_(Watts) '0.063W, 1/16W'
+PRP price '0.02'
+PRP Resistance '5.9 kOhms'
+PRP series 'CPF, Neohm'
+PRP Size_/_Dimension '0.061_ L x 0.031_ W (1.55mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 'A102299CT-ND'
+PRP Temperature_Coefficient '±50ppm/°C'
+PRP Tolerance '±1%'
+PRP value '5.9 kOhms'
+TOP 0 108.712 73.54800124 0 N 21 1 1
+TOP 1 108.712 72.2480013 0 N 3 79 2
+#
+# CMP 24
+CMP 7 104.775 74.18300124 90 N R5 3.3_kOhms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=9-1773463-9&DocType=DS&DocLang=English'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/te-connectivity-passive-product/CRGP0603F3K3/8577024'
+PRP Composition 'Thick Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Pulse Withstanding'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:36'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'TE Connectivity Passive Product'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'CRGP0603F3K3'
+PRP Part_Status 'Active'
+PRP partid '5037'
+PRP Power_(Watts) '0.25W, 1/4W'
+PRP price '0.02'
+PRP Resistance '3.3 kOhms'
+PRP series 'CRGP'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 'A130422CT-ND'
+PRP Temperature_Coefficient '±100ppm/°C'
+PRP Tolerance '±1%'
+PRP value '3.3 kOhms'
+TOP 0 104.775 74.83300248 0 N 20 0 1
+TOP 1 104.775 73.53300254 0 N 3 77 2
+#
+# CMP 25
+CMP 7 107.95 80.899 90 N R4 0_Ohms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'http://www.vishay.com/docs/20065/rcse3.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/vishay-dale/RCS06030000Z0EC/10059623'
+PRP Composition 'Thick Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Automotive AEC-Q200, Pulse Withstanding'
+PRP Height_-_Seated_(Max) '0.020_ (0.50mm)'
+PRP lastupdated '09/02/2024 20:42:16'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Vishay Dale'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'RCS06030000Z0EC'
+PRP Part_Status 'Active'
+PRP partid '23936'
+PRP Power_(Watts) '0.25W, 1/4W'
+PRP price '0.01'
+PRP Ratings 'AEC-Q200'
+PRP Resistance '0 Ohms'
+PRP series 'RCS e3'
+PRP Size_/_Dimension '0.061_ L x 0.033_ W (1.55mm x 0.85mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 '541-10557-1-ND'
+PRP Tolerance 'Jumper'
+PRP value '0 Ohms'
+TOP 0 107.95 81.54900124 0 N 33 1 1
+TOP 1 107.95 80.2490013 0 N 17 1 2
+#
+# CMP 26
+CMP 7 110.744 72.771 270 N R3 10_kOhms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.seielect.com/catalog/sei-rncs_rnch.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNCS0603BKE10K0/1708836'
+PRP Composition 'Thin Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Anti-Corrosive, Automotive AEC-Q200, Moisture Resistant'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:37'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Stackpole Electronics Inc'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'RNCS0603BKE10K0'
+PRP Part_Status 'Active'
+PRP partid '4838'
+PRP Power_(Watts) '0.063W, 1/16W'
+PRP price '0.06'
+PRP Ratings 'AEC-Q200'
+PRP Resistance '10 kOhms'
+PRP series 'RNCS'
+PRP Size_/_Dimension '0.061_ L x 0.031_ W (1.55mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 'RNCS0603BKE10K0CT-ND'
+PRP Temperature_Coefficient '±25ppm/°C'
+PRP Tolerance '±0.1%'
+PRP value '10 kOhms'
+TOP 0 110.744 72.12099876 180 N 3 85 1
+TOP 1 110.744 73.4209987 180 N 16 1 2
+#
+# CMP 27
+CMP 7 112.014 89.027 0 N R2 5.1_kOhms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.seielect.com/catalog/sei-packaging.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0603JG5K10/1712287'
+PRP Composition 'Thick Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Automotive AEC-Q200'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:35'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Stackpole Electronics Inc'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'CutTape'
+PRP Part_Number 'RMCF0603JG5K10'
+PRP Part_Status 'Active'
+PRP partid '5180'
+PRP Power_(Watts) '0.1W, 1/10W'
+PRP price '0.01'
+PRP Ratings 'AEC-Q200'
+PRP Resistance '5.1 kOhms'
+PRP series 'RMCF'
+PRP Size_/_Dimension '0.061_ L x 0.031_ W (1.55mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 '738-RMCF0603JG5K10CT-ND'
+PRP Temperature_Coefficient '±200ppm/°C'
+PRP Tolerance '±5%'
+PRP value '5.1 kOhms'
+TOP 0 111.36399876 89.027 270 N 3 58 1
+TOP 1 112.6639987 89.027 270 N 26 0 2
+#
+# CMP 28
+CMP 7 112.649 84.328 180 N R1 5.1_kOhms ;0=1,1=0.4500,5=0
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.seielect.com/catalog/sei-packaging.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0603JG5K10/1712287'
+PRP Composition 'Thick Film'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'Automotive AEC-Q200'
+PRP Height_-_Seated_(Max) '0.022_ (0.55mm)'
+PRP lastupdated '09/02/2024 20:43:35'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Stackpole Electronics Inc'
+PRP Minimum_Order '1'
+PRP Number_of_Terminations '2'
+PRP Operating_Temperature '-55°C ~ 155°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'CutTape'
+PRP Part_Number 'RMCF0603JG5K10'
+PRP Part_Status 'Active'
+PRP partid '5180'
+PRP Power_(Watts) '0.1W, 1/10W'
+PRP price '0.01'
+PRP Ratings 'AEC-Q200'
+PRP Resistance '5.1 kOhms'
+PRP series 'RMCF'
+PRP Size_/_Dimension '0.061_ L x 0.031_ W (1.55mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Device_Package '0603'
+PRP Supplier_Part_Number_1 '738-RMCF0603JG5K10CT-ND'
+PRP Temperature_Coefficient '±200ppm/°C'
+PRP Tolerance '±5%'
+PRP value '5.1 kOhms'
+TOP 0 113.29900124 84.328 90 N 25 1 1
+TOP 1 111.9990013 84.328 90 N 3 82 2
+#
+# CMP 29
+CMP 9 81.28 81.407 90 N Q1 AO3400A ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'AO3400A'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/ao3400a/alpha-and-omega-semiconductor?utm_currency=USD&region=nac'
+PRP Datasheet_Link 'http://aosmd.com/res/data_sheets/AO3400A.pdf'
+PRP Height '1.25mm'
+PRP Manufacturer_Name 'Alpha & Omega Semiconductors'
+PRP Manufacturer_Part_Number 'AO3400A'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 82.23000064 82.65700004 90 N 27 1 1
+TOP 1 80.32999936 82.65700004 90 N 3 21 2
+TOP 2 81.28 80.15699996 90 N 5 1 3
+#
+# CMP 30
+CMP 2 121.285 87.122 270 N 9 USB4105-GF-A-060 ;0=1,1=3.3100,5=0
+PRP Check_prices 'https://www.snapeda.com/parts/USB4105GFA060/Global+Connector+Technology/view-part/?ref=eda'
+PRP MF 'Global Connector Technology'
+PRP MP 'USB4105GFA060'
+PRP Package 'None'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/USB4105GFA060/Global+Connector+Technology/view-part/?ref=snap'
+PRP value ''
+TOP 0 116.53000062 83.92199878 270 N 3 60 A1_B12
+TOP 1 116.53000062 84.72199972 270 N 33 3 A4_B9
+TOP 2 116.53000062 85.87199996 270 N 25 0 A5
+TOP 3 116.53000062 86.8720005 270 N 31 1 A6
+TOP 4 116.53000062 87.3719995 270 N 29 1 A7
+TOP 5 116.53000062 88.37200004 270 N 0 16 A8
+TOP 6 116.53000062 90.32200122 270 N 3 55 B1_A12
+TOP 7 116.53000062 89.52200028 270 N 33 2 B4_A9
+TOP 8 116.53000062 88.87199904 270 N 26 1 B5
+TOP 9 116.53000062 87.87200104 270 N 31 0 B6
+TOP 10 116.53000062 86.37199896 270 N 29 0 B7
+TOP 11 116.53000062 85.37200096 270 N 0 13 B8
+TOP 12 117.60499974 90.0119993 270 N 0 12 empty-1
+TOP 13 117.60499974 84.2320007 270 N 0 11 empty-2
+TOP 14 117.10500074 82.80200102 180 N 3 49 SH1
+TOP 15 117.10500074 91.44199898 180 N 3 47 SH2
+TOP 16 121.285 82.80200102 180 N 3 45 SH3
+TOP 17 121.285 91.44199898 180 N 3 24 SH4
+#
+# CMP 31
+CMP 13 81.28 73.025 180 N j2 282834-2 ;0=2,1=10.0000,5=0
+PRP Color 'Green'
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282834&DocType=Customer+Drawing&DocLang=English'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'http://digikey.com/product-detail/en/te-connectivity-amp-connectors/282834-2/A98333-ND/1150135'
+PRP Current '10A'
+PRP lastupdated '15/01/2020 4:15:38'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'TE Connectivity AMP Connectors'
+PRP Mating_Orientation 'Horizontal with Board'
+PRP Minimum_Order '1'
+PRP Mounting_Type 'Through Hole'
+PRP Number_of_Levels '1'
+PRP packaging 'Bulk'
+PRP Part_Number '282834-2'
+PRP Part_Status 'Active'
+PRP Pitch '0.100_ (2.54mm)'
+PRP Positions_Per_Level '2'
+PRP price '0.88'
+PRP series 'Buchanan'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Part_Number_1 'A98333-ND'
+PRP Voltage '150V'
+PRP Wire_Gauge '16-30 AWG'
+PRP Wire_Termination 'Screw - Rising Cage Clamp'
+TOP 0 82.55 73.025 180 N 5 0 1
+TOP 1 80.01 73.025 180 N 6 0 2
+#
+# CMP 32
+CMP 5 92.84400024 81.39500104 0 N IC5 LSM6DSOXTR ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'LSM6DSOXTR'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/lsm6dsoxtr/stmicroelectronics.html?utm_currency=USD&region=europe'
+PRP Datasheet_Link 'https://www.st.com/resource/en/datasheet/lsm6dsox.pdf'
+PRP Manufacturer_Name 'STMicroelectronics'
+PRP Manufacturer_Part_Number 'LSM6DSOXTR'
+PRP Mouser_Part_Number '511-LSM6DSOXTR'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/STMicroelectronics/LSM6DSOXTR?qs=l7cgNqFNU1i9dcjzItLpVQ%3D%3D'
+TOP 0 91.694 82.14500208 0 N 9 0 1
+TOP 1 91.694 81.64500054 0 N 3 28 2
+TOP 2 91.694 81.14500154 0 N 3 29 3
+TOP 3 91.694 80.645 0 N 8 0 4
+TOP 4 92.34400124 80.4950003 270 N 1 4 5
+TOP 5 92.84400024 80.4950003 270 N 3 34 6
+TOP 6 93.34399924 80.4950003 270 N 3 31 7
+TOP 7 93.99400048 80.645 0 N 1 11 8
+TOP 8 93.99400048 81.14500154 0 N 0 8 9
+TOP 9 93.99400048 81.64500054 0 N 0 5 10
+TOP 10 93.99400048 82.14500208 0 N 0 6 11
+TOP 11 93.34399924 82.29500178 270 N 7 0 12
+TOP 12 92.84400024 82.29500178 270 N 11 0 13
+TOP 13 92.34400124 82.29500178 270 N 10 0 14
+#
+# CMP 33
+CMP 10 99.822 77.089 180 N IC3 TLV75533PDBVR ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'TLV75533PDBVR'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/tlv75533pdbvr/texas-instruments?utm_currency=USD&region=nac'
+PRP Datasheet_Link 'http://www.ti.com/lit/gpn/tlv755p'
+PRP Height '1.45mm'
+PRP Manufacturer_Name 'Texas Instruments'
+PRP Manufacturer_Part_Number 'TLV75533PDBVR'
+PRP Mouser_Part_Number '595-TLV75533PDBVR'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TLV75533PDBVR?qs=55YtniHzbhAKEwqeO2xJXQ%3D%3D'
+TOP 0 101.07200004 76.13899936 180 N 35 2 1
+TOP 1 101.07200004 77.089 180 N 3 72 2
+TOP 2 101.07200004 78.03900064 180 N 2 0 3
+TOP 3 98.57199996 78.03900064 180 N 0 17 4
+TOP 4 98.57199996 76.13899936 180 N 1 14 5
+#
+# CMP 34
+CMP 6 107.91199906 76.5769995 180 N IC2 BQ24074RGTR_1 ;0=1,1=0.0000,5=0
+PRP Check_prices 'https://www.snapeda.com/parts/BQ24074RGTR/Texas+Instruments/view-part/?ref=eda'
+PRP MF 'Texas Instruments'
+PRP MP 'BQ24074RGTR'
+PRP Package 'VQFN-16 Texas Instruments'
+PRP SnapEDA_Link 'https://www.snapeda.com/parts/BQ24074RGTR/Texas+Instruments/view-part/?ref=snap'
+PRP value ''
+TOP 0 109.347 75.82699846 180 N 16 0 1
+TOP 1 109.347 76.327 180 N 34 3 2
+TOP 2 109.347 76.826999 180 N 34 0 3
+TOP 3 109.347 77.32700054 180 N 3 84 4
+TOP 4 108.6620001 78.01200044 180 N 3 87 5
+TOP 5 108.16199856 78.01200044 180 N 17 0 6
+TOP 6 107.66199956 78.01200044 180 N 18 2 7
+TOP 7 107.16199802 78.01200044 180 N 3 86 8
+TOP 8 106.47699812 77.32700054 180 N 19 2 9
+TOP 9 106.47699812 76.826999 180 N 35 0 10
+TOP 10 106.47699812 76.327 180 N 35 1 11
+TOP 11 106.47699812 75.82699846 180 N 20 1 12
+TOP 12 107.16199802 75.14199856 180 N 33 0 13
+TOP 13 107.66199956 75.14199856 180 N 0 15 14
+TOP 14 108.16199856 75.14199856 180 N 0 14 15
+TOP 15 108.6620001 75.14199856 180 N 21 0 16
+TOP 16 107.91199906 76.5769995 180 N 3 73 17
+#
+# CMP 35
+CMP 11 108.458 86.106 180 N IC1 USBLC6-2SC6 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'USBLC6-2SC6'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/usblc6-2sc6/stmicroelectronics.html?utm_currency=USD&region=nac'
+PRP Datasheet_Link 'https://www.st.com/resource/en/datasheet/usblc6-2.pdf'
+PRP Height '1.45mm'
+PRP Manufacturer_Name 'STMicroelectronics'
+PRP Manufacturer_Part_Number 'USBLC6-2SC6'
+PRP Mouser_Part_Number '511-USBLC6-2SC6'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/STMicroelectronics/USBLC6-2SC6?qs=po45yt2pPpu%2FhNIlwQdTlg%3D%3D'
+TOP 0 109.70800004 85.15599936 180 N 29 2 1
+TOP 1 109.70800004 86.106 180 N 3 83 2
+TOP 2 109.70800004 87.05600064 180 N 31 2 3
+TOP 3 107.20799996 87.05600064 180 N 32 1 4
+TOP 4 107.20799996 86.106 180 N 33 6 5
+TOP 5 107.20799996 85.15599936 180 N 30 1 6
+#
+# CMP 36
+CMP 8 81.407 77.851 0 N D2 BAT54WS-E3-08 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'BAT54WS-E3-08'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/bat54ws-e3-08/vishay.html?utm_currency=USD&region=nac'
+PRP Datasheet_Link 'https://componentsearchengine.com/Datasheets/2/BAT54WS-E3-08.pdf'
+PRP Height '1.15mm'
+PRP Manufacturer_Name 'Vishay'
+PRP Manufacturer_Part_Number 'BAT54WS-E3-08'
+PRP Mouser_Part_Number '78-BAT54WS-E3-08'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/BAT54WS-E3-08?qs=KP8Io%2FXyE5Rw40UGWRT8IQ%3D%3D'
+TOP 0 80.2450008 77.851 0 N 6 2 1
+TOP 1 82.5689992 77.851 0 N 5 2 2
+#
+# CMP 37
+CMP 0 90.551 78.613 180 N C10 0.1__F ;0=1,1=0.8900,5=0
+PRP Applications 'Automotive'
+PRP Capacitance '0.1 µF'
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5458/CL10E104KC8VPNC_Spec.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10E104KC8VPNC/20498486'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'General Purpose'
+PRP lastupdated '06/04/2026 19:18:46'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Samsung Electro-Mechanics'
+PRP Minimum_Order '1'
+PRP Mounting_Type 'Surface Mount, MLCC, Epoxy'
+PRP Operating_Temperature '-55°C ~ 150°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'CL10E104KC8VPNC'
+PRP partid '68845'
+PRP price '0.04'
+PRP Ratings 'AEC-Q200'
+PRP series 'CL'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Part_Number_1 '1276-CL10E104KC8VPNCCT-ND'
+PRP Temperature_Coefficient 'X8L'
+PRP Thickness_(Max) '0.035_ (0.88mm)'
+PRP Tolerance '±10%'
+PRP value '0.1 µF'
+PRP Voltage_-_Rated '100V'
+TOP 0 91.22599992 78.613 90 N 1 8 1
+TOP 1 89.87600008 78.613 90 N 3 22 2
+#
+# CMP 38
+CMP 0 96.05199992 80.772 180 N C9 0.1__F ;0=1,1=0.8900,5=0
+PRP Applications 'Automotive'
+PRP Capacitance '0.1 µF'
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5458/CL10E104KC8VPNC_Spec.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10E104KC8VPNC/20498486'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'General Purpose'
+PRP lastupdated '06/04/2026 19:18:46'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Samsung Electro-Mechanics'
+PRP Minimum_Order '1'
+PRP Mounting_Type 'Surface Mount, MLCC, Epoxy'
+PRP Operating_Temperature '-55°C ~ 150°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'CL10E104KC8VPNC'
+PRP partid '68845'
+PRP price '0.04'
+PRP Ratings 'AEC-Q200'
+PRP series 'CL'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Part_Number_1 '1276-CL10E104KC8VPNCCT-ND'
+PRP Temperature_Coefficient 'X8L'
+PRP Thickness_(Max) '0.035_ (0.88mm)'
+PRP Tolerance '±10%'
+PRP value '0.1 µF'
+PRP Voltage_-_Rated '100V'
+TOP 0 96.72699984 80.772 90 N 3 30 1
+TOP 1 95.377 80.772 90 N 1 16 2
+#
+# CMP 39
+CMP 0 79.121 92.28900008 270 N C8 1__F ;0=1,1=0.8900,5=0
+PRP Applications 'Automotive, Bypass, Decoupling'
+PRP Capacitance '1 µF'
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://api.kemet.com/component-edge/download/datasheet/C0603C105K4RACAUTO.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/kemet/C0603C105K4RACAUTO/8635831'
+PRP Device_Package '0603 (1608 Metric)'
+PRP lastupdated '06/04/2026 19:23:53'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'KEMET'
+PRP Minimum_Order '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 125°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'C0603C105K4RACAUTO'
+PRP Part_Status 'Active'
+PRP partid '2179'
+PRP price '0.02'
+PRP Ratings 'AEC-Q200'
+PRP series 'SMD Auto X7R'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Part_Number_1 '399-17704-1-ND'
+PRP Temperature_Coefficient 'X7R'
+PRP Thickness_(Max) '0.037_ (0.95mm)'
+PRP Tolerance '±10%'
+PRP value '1 µF'
+PRP Voltage_-_Rated '16V'
+TOP 0 79.121 91.61400016 180 N 3 53 1
+TOP 1 79.121 92.964 180 N 13 1 2
+#
+# CMP 40
+CMP 0 78.867 98.806 0 N C7 10__F ;0=1,1=0.8900,5=0
+PRP Applications 'General Purpose'
+PRP Capacitance '10 µF'
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.ashx?la=en-us'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/murata-electronics/GRM188R60G106ME47D/702562'
+PRP Device_Package '0603 (1608 Metric)'
+PRP lastupdated '06/04/2026 19:23:52'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Murata Electronics'
+PRP Minimum_Order '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 85°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'GRM188R60G106ME47D'
+PRP Part_Status 'Active'
+PRP partid '2393'
+PRP price '0.01'
+PRP series 'GRM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Part_Number_1 '490-3298-1-ND'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.035_ (0.90mm)'
+PRP Tolerance '±20%'
+PRP value '10 µF'
+PRP Voltage_-_Rated '4V'
+TOP 0 78.19200008 98.806 270 N 3 75 1
+TOP 1 79.54199992 98.806 270 N 1 1 2
+#
+# CMP 41
+CMP 0 78.867 97.155 0 N C6 0.1__F ;0=1,1=0.8900,5=0
+PRP Applications 'Automotive'
+PRP Capacitance '0.1 µF'
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5458/CL10E104KC8VPNC_Spec.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10E104KC8VPNC/20498486'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'General Purpose'
+PRP lastupdated '06/04/2026 19:18:46'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Samsung Electro-Mechanics'
+PRP Minimum_Order '1'
+PRP Mounting_Type 'Surface Mount, MLCC, Epoxy'
+PRP Operating_Temperature '-55°C ~ 150°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'CL10E104KC8VPNC'
+PRP partid '68845'
+PRP price '0.04'
+PRP Ratings 'AEC-Q200'
+PRP series 'CL'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Part_Number_1 '1276-CL10E104KC8VPNCCT-ND'
+PRP Temperature_Coefficient 'X8L'
+PRP Thickness_(Max) '0.035_ (0.88mm)'
+PRP Tolerance '±10%'
+PRP value '0.1 µF'
+PRP Voltage_-_Rated '100V'
+TOP 0 78.19200008 97.155 270 N 3 76 1
+TOP 1 79.54199992 97.155 270 N 1 2 2
+#
+# CMP 42
+CMP 0 102.743 75.438 90 N C5 4.7__F ;0=1,1=0.8900,5=0
+PRP Applications 'General Purpose'
+PRP Capacitance '4.7 µF'
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.ashx?la=en-us'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E475KE11D/3900465'
+PRP Device_Package '0603 (1608 Metric)'
+PRP lastupdated '06/04/2026 19:23:52'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Murata Electronics'
+PRP Minimum_Order '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 85°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'GRM188R61E475KE11D'
+PRP Part_Status 'Active'
+PRP partid '2387'
+PRP price '0.03'
+PRP series 'GRM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Part_Number_1 '490-7203-1-ND'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.037_ (0.95mm)'
+PRP Tolerance '±10%'
+PRP value '4.7 µF'
+PRP Voltage_-_Rated '25V'
+TOP 0 102.743 76.11299992 0 N 35 3 1
+TOP 1 102.743 74.76300008 0 N 3 71 2
+#
+# CMP 43
+CMP 0 94.869 75.438 270 N C4 10__F ;0=1,1=0.8900,5=0
+PRP Applications 'General Purpose'
+PRP Capacitance '10 µF'
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.ashx?la=en-us'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/murata-electronics/GRM188R60J106ME47D/965910'
+PRP Device_Package '0603 (1608 Metric)'
+PRP lastupdated '06/04/2026 19:23:52'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Murata Electronics'
+PRP Minimum_Order '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 85°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'GRM188R60J106ME47D'
+PRP Part_Status 'Active'
+PRP partid '2351'
+PRP price '0.01'
+PRP series 'GRM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Part_Number_1 '490-3896-1-ND'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.035_ (0.90mm)'
+PRP Tolerance '±20%'
+PRP value '10 µF'
+PRP Voltage_-_Rated '6.3V'
+TOP 0 94.869 74.76300008 180 N 3 32 1
+TOP 1 94.869 76.11299992 180 N 1 9 2
+#
+# CMP 44
+CMP 0 96.647 75.438 270 N C3 0.1__F ;0=1,1=0.8900,5=0
+PRP Applications 'Automotive'
+PRP Capacitance '0.1 µF'
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5458/CL10E104KC8VPNC_Spec.pdf'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10E104KC8VPNC/20498486'
+PRP Device_Package '0603 (1608 Metric)'
+PRP Features 'General Purpose'
+PRP lastupdated '06/04/2026 19:18:46'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Samsung Electro-Mechanics'
+PRP Minimum_Order '1'
+PRP Mounting_Type 'Surface Mount, MLCC, Epoxy'
+PRP Operating_Temperature '-55°C ~ 150°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'CL10E104KC8VPNC'
+PRP partid '68845'
+PRP price '0.04'
+PRP Ratings 'AEC-Q200'
+PRP series 'CL'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Part_Number_1 '1276-CL10E104KC8VPNCCT-ND'
+PRP Temperature_Coefficient 'X8L'
+PRP Thickness_(Max) '0.035_ (0.88mm)'
+PRP Tolerance '±10%'
+PRP value '0.1 µF'
+PRP Voltage_-_Rated '100V'
+TOP 0 96.647 74.76300008 180 N 3 35 1
+TOP 1 96.647 76.11299992 180 N 1 15 2
+#
+# CMP 45
+CMP 0 104.394 77.30300008 90 N C2 10__F ;0=1,1=0.8900,5=0
+PRP Applications 'General Purpose'
+PRP Capacitance '10 µF'
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.ashx?la=en-us'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/murata-electronics/GRM188R60J106ME47D/965910'
+PRP Device_Package '0603 (1608 Metric)'
+PRP lastupdated '06/04/2026 19:23:52'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Murata Electronics'
+PRP Minimum_Order '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 85°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'GRM188R60J106ME47D'
+PRP Part_Status 'Active'
+PRP partid '2351'
+PRP price '0.01'
+PRP series 'GRM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Part_Number_1 '490-3896-1-ND'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.035_ (0.90mm)'
+PRP Tolerance '±20%'
+PRP value '10 µF'
+PRP Voltage_-_Rated '6.3V'
+TOP 0 104.394 77.978 0 N 3 74 1
+TOP 1 104.394 76.62800016 0 N 35 4 2
+#
+# CMP 46
+CMP 0 110.998 77.43000008 90 N C1 10__F ;0=1,1=0.8900,5=0
+PRP Applications 'General Purpose'
+PRP Capacitance '10 µF'
+PRP componentlink1description 'Datasheet'
+PRP componentlink1url 'https://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.ashx?la=en-us'
+PRP componentlink2description 'DigiKey Link'
+PRP componentlink2url 'https://www.digikey.com/en/products/detail/murata-electronics/GRM188R60J106ME47D/965910'
+PRP Device_Package '0603 (1608 Metric)'
+PRP lastupdated '06/04/2026 19:23:52'
+PRP Lifecycle_Status 'Active'
+PRP manufacturer 'Murata Electronics'
+PRP Minimum_Order '1'
+PRP Mounting_Type 'Surface Mount, MLCC'
+PRP Operating_Temperature '-55°C ~ 85°C'
+PRP Package_/_Case '0603 (1608 Metric)'
+PRP packaging 'TapeAndReel'
+PRP Part_Number 'GRM188R60J106ME47D'
+PRP Part_Status 'Active'
+PRP partid '2351'
+PRP price '0.01'
+PRP series 'GRM'
+PRP Size_/_Dimension '0.063_ L x 0.031_ W (1.60mm x 0.80mm)'
+PRP Supplier_1 'DigiKey'
+PRP Supplier_Part_Number_1 '490-3896-1-ND'
+PRP Temperature_Coefficient 'X5R'
+PRP Thickness_(Max) '0.035_ (0.90mm)'
+PRP Tolerance '±20%'
+PRP value '10 µF'
+PRP Voltage_-_Rated '6.3V'
+TOP 0 110.998 78.105 0 N 3 80 1
+TOP 1 110.998 76.75500016 0 N 34 1 2
+#

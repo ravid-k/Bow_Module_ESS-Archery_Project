@@ -1,0 +1,8 @@
+Added Component: Designator=TP_3V3(Test_Pad)
+Add Pin To Net: Unknown Pin: Pin TP_3V3-
+Add Pin To Net: Unknown Pin: Pin TP_Boot-
+Add Pin To Net: Unknown Pin: Pin TP_CHG-
+Add Pin To Net: Unknown Pin: Pin TP_EN-
+Add Pin To Net: Unknown Pin: Pin TP_GATE-
+Add Pin To Net: Unknown Pin: Pin TP_STUS-
+Added Member To Class: ClassName=Bow_ESS_Schematic Member=Component TP_3V3

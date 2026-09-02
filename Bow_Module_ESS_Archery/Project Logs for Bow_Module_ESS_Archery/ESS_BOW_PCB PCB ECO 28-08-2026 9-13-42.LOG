@@ -1,0 +1,20 @@
+Added Component: Designator=J_BAT(JST_S2B-PH-SM4-TB(LF)(SN))
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/S2B-PH-SM4-TB(LF)(SN)/JST+Sales+America+Inc./view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Part_Number"; Value = "455-1749-2-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "JST Sales"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "S2B-PH-SM4-TB(LF)(SN)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/S2B-PH-SM4-TB(LF)(SN)/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/S2B-PH-SM4-TB(LF)(SN)/JST+Sales+America+Inc./view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VBAT Pin=J_BAT-1
+Added Pin To Net: NetName=GND Pin=J_BAT-2
+Add Pin To Net: Unknown Pin: Pin TP_Boot-
+Add Pin To Net: Unknown Pin: Pin TP_CHG-
+Add Pin To Net: Unknown Pin: Pin TP_EN-
+Add Pin To Net: Unknown Pin: Pin TP_GATE-
+Add Pin To Net: Unknown Pin: Pin TP_STUS-
+Added Member To Class: ClassName=Bow_ESS_Schematic Member=Component J1 USB4105-GF-A-060
+Added Member To Class: ClassName=Bow_ESS_Schematic Member=Component J_BAT S2B-PH-SM4-TB(LF)(SN)_1
+Added Member To Class: ClassName=Bow_ESS_Schematic Member=Component R1 5.1 kOhms
+Added Member To Class: ClassName=Bow_ESS_Schematic Member=Component R2 5.1 kOhms

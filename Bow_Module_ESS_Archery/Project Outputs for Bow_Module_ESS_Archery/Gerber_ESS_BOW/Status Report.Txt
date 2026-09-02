@@ -1,0 +1,32 @@
+Output: Gerber X2 Files
+Type  : GerberX2
+From  : Variant [[No Variations]] of Project [Bow_Module_ESS_Archery.PrjPcb]
+   Generated File[ESS_BOW_PCB_Copper_Signal_Top.gbr]
+   Generated File[ESS_BOW_PCB_Copper_Signal_1.gbr]
+   Generated File[ESS_BOW_PCB_Copper_Signal_2.gbr]
+   Generated File[ESS_BOW_PCB_Copper_Signal_Bot.gbr]
+   Generated File[ESS_BOW_PCB_Pads_Bot.gbr]
+   Generated File[ESS_BOW_PCB_Pads_Top.gbr]
+   Generated File[ESS_BOW_PCB_Legend_Top.gbr]
+   Generated File[ESS_BOW_PCB_Legend_Bot.gbr]
+   Generated File[ESS_BOW_PCB_Soldermask_Top.gbr]
+   Generated File[ESS_BOW_PCB_Soldermask_Bot.gbr]
+   Generated File[ESS_BOW_PCB_Paste_Top.gbr]
+   Generated File[ESS_BOW_PCB_Paste_Bot.gbr]
+   Generated File[ESS_BOW_PCB_Keep-out.gbr]
+   Generated File[ESS_BOW_PCB_Mechanical_1.gbr]
+   Generated File[ESS_BOW_PCB_Mechanical_13.gbr]
+   Generated File[ESS_BOW_PCB_Mechanical_15.gbr]
+   Generated File[ESS_BOW_PCB_Profile.gbr]
+   Generated File[ESS_BOW_PCB_NPTH_Drill.gbr]
+   Generated File[ESS_BOW_PCB_PTH_Drill.gbr]
+   Generated File[ESS_BOW_PCB_Drawing_1.gbr]
+   Generated File[ESS_BOW_PCB_Drillmap_1.gbr]
+   Generated File[ESS_BOW_PCB.EXTREP]
+   Generated File[ESS_BOW_PCB.REP]
+
+
+Files Generated   : 23
+Documents Printed : 0
+
+Finished Output Generation At 10:07:23 On 29/08/2026
