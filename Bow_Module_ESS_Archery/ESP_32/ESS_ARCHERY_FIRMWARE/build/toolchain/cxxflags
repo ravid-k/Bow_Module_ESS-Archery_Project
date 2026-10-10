@@ -1,0 +1,4 @@
+-march=rv32imc_zicsr_zifencei
+-mtune=esp-base
+"-specs=C:/Users/miiri/Desktop/RAVI_FILES/Altium_Projects/Electronics_In_Sports_Project/Bow_Module_ESS-Archery/Bow_Module_ESS_Archery/ESP_32/ESS_ARCHERY_FIRMWARE/build/specs/picolibc.specs"
+-fno-rtti

@@ -1,0 +1,36 @@
+Command: cmake -G Ninja -B C:\Users\miiri\Desktop\RAVI_FILES\Altium_Projects\Electronics_In_Sports_Project\Bow_Module_ESS-Archery\Bow_Module_ESS_Archery\ESP_32\ESS_ARCHERY_FIRMWARE\build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Espressif\tools\python\v6.1\venv\Scripts\python.exe -DESP_PLATFORM=1 -DCCACHE_ENABLE=True C:\Users\miiri\Desktop\RAVI_FILES\Altium_Projects\Electronics_In_Sports_Project\Bow_Module_ESS-Archery\Bow_Module_ESS_Archery\ESP_32\ESS_ARCHERY_FIRMWARE
+-- IDF_TARGET is not set, guessed 'esp32c3' from sdkconfig 'C:/Users/miiri/Desktop/RAVI_FILES/Altium_Projects/Electronics_In_Sports_Project/Bow_Module_ESS-Archery/Bow_Module_ESS_Archery/ESP_32/ESS_ARCHERY_FIRMWARE/sdkconfig'
+-- Found Git: C:/Program Files/Git/cmd/git.exe (found version "2.55.0.windows.5")
+-- Minimal build - OFF
+-- ccache will be used for faster recompilation
+-- The C compiler identification is GNU 15.2.0
+-- The CXX compiler identification is GNU 15.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Espressif/tools/riscv32-esp-elf/esp-15.2.0_20251204/riscv32-esp-elf/bin/riscv32-esp-elf-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Espressif/tools/riscv32-esp-elf/esp-15.2.0_20251204/riscv32-esp-elf/bin/riscv32-esp-elf-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Espressif/tools/riscv32-esp-elf/esp-15.2.0_20251204/riscv32-esp-elf/bin/riscv32-esp-elf-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32c3
+-- KCONFIG_REPORT_VERBOSITY not set, using default
+-- Project sdkconfig file C:/Users/miiri/Desktop/RAVI_FILES/Altium_Projects/Electronics_In_Sports_Project/Bow_Module_ESS-Archery/Bow_Module_ESS_Archery/ESP_32/ESS_ARCHERY_FIRMWARE/sdkconfig
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Adding linker script C:/esp/v6.1/esp-idf/components/riscv/ld/rom.api.ld
+-- App "ess_archery_v1" version: b892f0f-dirty

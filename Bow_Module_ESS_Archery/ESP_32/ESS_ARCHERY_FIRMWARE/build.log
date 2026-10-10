@@ -1,0 +1,16 @@
+Your environment is not configured to handle Unicode characters.
+
+Recommended fix (persistent):
+ - Enable "Beta: Use Unicode UTF-8 for worldwide language support" in Windows language/region settings.
+
+If you still see issues or this warning persists, you can also try one of these workarounds:
+ - Run "chcp 65001" in the current console before running idf.py.
+ - Set PYTHONUTF8=1 before running idf.py (or set it globally).
+
+Note: "chcp 65001" must be run in each new console session unless your console/profile is configured to apply it automatically.
+Executing action: all (aliases: build)
+Running cmake in directory C:\Users\miiri\Desktop\RAVI_FILES\Altium_Projects\Electronics_In_Sports_Project\Bow_Module_ESS-Archery\Bow_Module_ESS_Archery\ESP_32\ESS_ARCHERY_FIRMWARE\build
+Executing "cmake -G Ninja -B C:\Users\miiri\Desktop\RAVI_FILES\Altium_Projects\Electronics_In_Sports_Project\Bow_Module_ESS-Archery\Bow_Module_ESS_Archery\ESP_32\ESS_ARCHERY_FIRMWARE\build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Espressif\tools\python\v6.1\venv\Scripts\python.exe -DESP_PLATFORM=1 -DCCACHE_ENABLE=True C:\Users\miiri\Desktop\RAVI_FILES\Altium_Projects\Electronics_In_Sports_Project\Bow_Module_ESS-Archery\Bow_Module_ESS_Archery\ESP_32\ESS_ARCHERY_FIRMWARE"...
+-- IDF_TARGET is not set, guessed 'esp32c3' from sdkconfig 'C:/Users/miiri/Desktop/RAVI_FILES/Altium_Projects/Electronics_In_Sports_Project/Bow_Module_ESS-Archery/Bow_Module_ESS_Archery/ESP_32/ESS_ARCHERY_FIRMWARE/sdkconfig'
+-- Found Git: C:/Program Files/Git/cmd/git.exe (found version "2.55.0.windows.5")
+cmake failed with exit code 3221225786, output of the command is in the C:\Users\miiri\Desktop\RAVI_FILES\Altium_Projects\Electronics_In_Sports_Project\Bow_Module_ESS-Archery\Bow_Module_ESS_Archery\ESP_32\ESS_ARCHERY_FIRMWARE\build\log\idf_py_stderr_output_39864 and C:\Users\miiri\Desktop\RAVI_FILES\Altium_Projects\Electronics_In_Sports_Project\Bow_Module_ESS-Archery\Bow_Module_ESS_Archery\ESP_32\ESS_ARCHERY_FIRMWARE\build\log\idf_py_stdout_output_39864
