@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#020305">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>ESS-ARCHERY Field App V1.6.1 Vision</title>
+<link rel="manifest" href="manifest.webmanifest">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root{--bg:#020305;--panel:#080d13;--panel2:#0d141d;--line:#1b2632;--text:#f4f7fb;--silver:#b9c4cf;--muted:#738294;--blue:#1db7ff;--blue2:#0078ff;--gold:#d8a74b;--green:#37db97;--amber:#ffbe4b;--red:#ff6075;--shadow:0 20px 55px rgba(0,0,0,.45)}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif}
+body{background:radial-gradient(circle at 10% 0%, rgba(16,78,129,.17), transparent 32%),radial-gradient(circle at 92% 6%, rgba(216,167,75,.08), transparent 20%),linear-gradient(180deg,#020305 0%,#04080d 45%,#020305 100%)}
+.page{max-width:1540px;margin:auto;padding:18px}.panel{background:linear-gradient(145deg,rgba(9,15,22,.98),rgba(4,8,12,.98));border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}
+header{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:20px 24px}.brand{display:flex;align-items:center;gap:18px;min-width:0}.logoWrap{width:106px;height:82px;border-radius:20px;display:flex;align-items:center;justify-content:center;background:transparent;overflow:hidden;flex:0 0 auto}.logoImg{width:100%;height:100%;object-fit:cover;object-position:center;border-radius:18px;display:block}
+h1{margin:0;font-size:36px;letter-spacing:.4px}.subtitle{margin-top:6px;color:var(--silver);font-size:14px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.mobileDock{display:none}
+button{min-height:46px;padding:11px 18px;border-radius:14px;border:1px solid var(--line);background:#121a24;color:var(--text);font-weight:900;cursor:pointer;transition:.15s ease}button:hover{transform:translateY(-1px)}button:disabled{opacity:.42;cursor:not-allowed;transform:none}.primary{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#00111c;border:0}.gold{background:linear-gradient(135deg,#e0ba65,#9a7233);color:#140d03;border:0}.warn{background:linear-gradient(135deg,#ffd36c,#df9614);color:#1b1000;border:0}.danger{color:#ff9dad}
+.conn{margin-top:8px;text-align:right;color:var(--muted);font-size:12px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--red);margin-right:6px}.conn.ok .dot{background:var(--green);box-shadow:0 0 10px rgba(55,219,151,.8)}
+.sectionGrid,.hero,.sensors,.analytics{display:grid;gap:16px;margin-top:16px}.sectionGrid{grid-template-columns:1.16fr .84fr}.hero{grid-template-columns:1.9fr 1fr}.sensors,.analytics{grid-template-columns:1fr 1fr}.box,.card{padding:18px}.eyebrow{color:var(--gold);font-size:11px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase}.sectionTitle{font-size:20px;font-weight:900;margin:4px 0 0}
+.fields{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.field label{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.8px;margin:0 0 6px 2px}.field input,.field select{width:100%;height:44px;border-radius:12px;border:1px solid var(--line);background:#0a121a;color:var(--text);padding:0 12px;outline:none}.field input:focus,.field select:focus{border-color:var(--blue)}
+.profileActions{margin-top:12px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--silver);font-size:11px;background:#0b121a}
+.stateRow{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}.stateRow:last-of-type{border-bottom:0}.stateRow b{color:var(--blue)}.hint{margin-top:10px;padding:12px 13px;border:1px solid var(--line);border-radius:14px;background:#0a121a;color:var(--muted);font-size:12px;line-height:1.45}
+.chartHeader{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:10px}.timerPill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:linear-gradient(145deg,#0c1620,#091119);color:var(--silver);font-size:13px;font-weight:700;white-space:nowrap}.chartWrap{height:470px}
+.scoreBox{text-align:center;padding:22px;border:1px solid var(--line);border-radius:20px;background:radial-gradient(circle at 50% 0%, rgba(29,183,255,.12), rgba(9,14,19,.94) 62%)}.scoreLabel{color:var(--silver);font-size:12px;letter-spacing:1px;text-transform:uppercase}.scoreValue{font-size:72px;font-weight:900;line-height:1;margin-top:5px}.badge{display:inline-block;margin-top:10px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:#0f1720;color:var(--silver);font-size:11px}
+.metricRow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.metric{padding:14px;border-radius:15px;border:1px solid var(--line);background:var(--panel2)}.metric .k{color:var(--muted);font-size:10px;letter-spacing:.9px;text-transform:uppercase}.metric .v{font-size:26px;font-weight:900;margin-top:5px}
+.targetCard{margin-top:12px;padding:15px;border:1px solid var(--line);border-radius:16px;background:#091119}.targetCard h3{margin:0 0 8px}.targetHint{color:var(--muted);font-size:12px;line-height:1.45}.targetAimWrap{margin-top:12px;display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:14px;align-items:center}.targetFaceShell{display:flex;justify-content:center}.targetFaceSvg{width:min(100%,360px);aspect-ratio:1/1;border-radius:18px;background:#070b10;border:1px solid var(--line);touch-action:none;cursor:crosshair;box-shadow:inset 0 0 35px rgba(0,0,0,.45)}.targetFaceSvg.locked{opacity:.55;cursor:not-allowed}.targetReadout{display:grid;gap:8px}.coordBox{padding:12px 13px;border-radius:14px;border:1px solid var(--line);background:#0d151e}.coordBox .k{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.9px}.coordBox .v{display:block;margin-top:4px;font-size:18px;font-weight:900}.coordLegend{color:var(--muted);font-size:11px;line-height:1.45}.targetActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.sensorGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.sensor{padding:13px;border-radius:14px;border:1px solid var(--line);background:var(--panel2)}.sensor span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase}.sensor b{display:block;margin-top:5px;font-size:19px}
+.analyticsChart{height:320px}.insight{border-left:3px solid var(--gold);background:#08131b;color:var(--silver);padding:15px 16px;border-radius:12px;font-size:13px;line-height:1.55}.insight strong{color:#fff}.historyWrap{overflow:auto;max-height:250px;margin-top:10px}.history{width:100%;border-collapse:collapse;font-size:12px}.history th,.history td{padding:8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}.history th{color:var(--muted)}
+.exports{margin-top:16px;padding:14px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.footer{padding:15px 8px 8px;text-align:center;color:var(--muted);font-size:11px}
+.voiceStatus{margin-top:8px;padding:10px 13px;border:1px solid var(--line);border-radius:14px;background:#091119;color:var(--muted);font-size:12px;line-height:1.4}.voiceStatus.listening{color:var(--green);border-color:rgba(55,219,151,.35)}.voiceStatus.command{color:#f3d389;border-color:rgba(216,167,75,.45);background:rgba(216,167,75,.07)}.voiceStatus.bad{color:var(--amber);border-color:rgba(255,190,75,.35)}.voiceArmed{border-color:rgba(55,219,151,.55)!important;color:var(--green)!important}
+.resultModeTabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.resultModeBtn.active{border-color:rgba(29,183,255,.7);background:rgba(29,183,255,.12);color:var(--blue)}.visionPanel{display:none}.visionPanel.active{display:block}.manualPanel{display:none}.manualPanel.active{display:block}.visionBox{padding:12px;border:1px solid var(--line);border-radius:14px;background:#081018;margin-top:10px}.visionRow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.visionStatus{margin-top:8px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:#0a121a;color:var(--muted);font-size:12px;line-height:1.4}.visionStatus.ok{color:var(--green);border-color:rgba(55,219,151,.35)}.visionStatus.busy{color:var(--blue);border-color:rgba(29,183,255,.35)}.visionStatus.bad{color:var(--amber);border-color:rgba(255,190,75,.35)}.visionFields{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.visionField label{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px}.visionField input{width:100%;height:42px;border-radius:11px;border:1px solid var(--line);background:#0b141d;color:var(--text);padding:0 10px;font-weight:800}.visionField input:focus{border-color:var(--blue);outline:none}.visionMeta{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.visionPreview{display:none;margin-top:10px;width:100%;max-height:420px;object-fit:contain;border-radius:14px;border:1px solid var(--line);background:#05080c}.visionPreview.show{display:block}.apiRow{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:10px}.apiRow input{width:100%;height:40px;border-radius:10px;border:1px solid var(--line);background:#081018;color:var(--silver);padding:0 10px}.tinyNote{color:var(--muted);font-size:10px;line-height:1.4;margin-top:7px}.hiddenFile{display:none}
+.mobileFieldBar{display:none}.mobileSupport{display:none}.mobileFieldMeta{display:flex;gap:7px;flex-wrap:wrap;align-items:center}.mobileFieldMeta .chip{margin:0}.installBtn{display:none}
+
+@media(max-width:1060px){.sectionGrid,.hero,.analytics{grid-template-columns:1fr}.fields{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:740px){body{padding-bottom:96px}.page{padding:8px}header{grid-template-columns:1fr;padding:11px 12px;border-radius:18px}.controlsDesktop{display:none}.logoWrap{width:62px;height:48px;border-radius:14px}.logoImg{border-radius:12px}h1{font-size:22px}.subtitle{font-size:10px;margin-top:3px}.sectionGrid,.hero,.sensors,.analytics{gap:8px;margin-top:8px}.box,.card{padding:12px;border-radius:18px}.sectionGrid{grid-template-columns:1fr}.fields{grid-template-columns:1fr 1fr}.hero{display:flex;flex-direction:column}.hero>.panel:nth-child(2){order:-1}.chartHeader{align-items:center}.chartWrap{height:245px}.scoreBox{padding:14px}.scoreValue{font-size:68px}.metricRow{margin-top:8px}.metric{padding:10px}.metric .v{font-size:21px}.targetCard{padding:12px}.targetAimWrap{grid-template-columns:1fr}.targetFaceSvg{width:min(100%,330px)}.sensors,.analytics{grid-template-columns:1fr}.mobileFieldBar{display:flex;position:sticky;top:6px;z-index:40;margin-top:8px;padding:8px 9px;align-items:center;justify-content:space-between;gap:8px;border:1px solid var(--line);border-radius:16px;background:rgba(4,8,13,.94);backdrop-filter:blur(14px);box-shadow:0 10px 28px rgba(0,0,0,.45)}.mobileFieldBar button{min-height:38px;padding:7px 10px;font-size:11px}.mobileSupport{display:block;margin-top:8px;padding:9px 11px;border:1px solid var(--line);border-radius:14px;background:#091119;color:var(--muted);font-size:11px;line-height:1.4}.mobileSupport.ok{color:var(--green);border-color:rgba(55,219,151,.35)}.mobileSupport.bad{color:var(--amber);border-color:rgba(255,190,75,.35)}body.mobileFieldMode .setupSection,body.mobileFieldMode .sensorSection,body.mobileFieldMode .analyticsSection,body.mobileFieldMode .exportsSection{display:none}body.mobileFieldMode .hero .panel:first-child{margin-top:0}.mobileDock{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;position:fixed;left:7px;right:7px;bottom:max(7px,env(safe-area-inset-bottom));z-index:60;padding:7px;border-radius:18px;border:1px solid var(--line);background:rgba(4,8,13,.97);backdrop-filter:blur(16px);box-shadow:0 12px 38px rgba(0,0,0,.7)}.mobileDock button{padding:9px 4px;min-height:52px;font-size:11px}.installBtn.show{display:inline-flex}.footer{padding-bottom:4px}}
+@media(max-width:430px){.fields{grid-template-columns:1fr}.targetReadout{grid-template-columns:1fr 1fr}.coordBox:last-child{grid-column:1/-1}.visionFields{grid-template-columns:1fr 1fr}.apiRow{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="panel">
+  <div class="brand">
+    <div class="logoWrap"><img src="archer_logo.png" alt="ESS Archery" class="logoImg"></div>
+    <div><h1>ESS-ARCHERY</h1><div class="subtitle">Field stability analysis • BLE bow module • Drona sessions</div></div>
+  </div>
+  <div class="controlsDesktop">
+    <div class="controls">
+      <button id="connectBtn" class="primary">◉ CONNECT</button>
+      <button id="disconnectBtn">⏏ DISCONNECT</button>
+      <button id="setStopBtn" class="primary" disabled>➤ SET</button>
+      <button id="hapticBtn" class="gold" disabled>⚡ HAPTIC</button>
+      <button id="voiceBtn">🎙 VOICE OFF</button>
+    </div>
+    <div id="connInfo" class="conn"><span class="dot"></span>Disconnected</div>
+  </div>
+</header>
+
+<div class="mobileFieldBar">
+  <div class="mobileFieldMeta">
+    <span class="chip">FIELD PHONE</span>
+    <span id="mStateChip" class="chip">READY</span>
+  </div>
+  <div style="display:flex;gap:6px">
+    <button id="installBtn" class="installBtn">＋ INSTALL</button>
+    <button id="mVoiceBtn">🎙 VOICE OFF</button>
+    <button id="fieldViewBtn">☰ FULL</button>
+  </div>
+</div>
+<div id="mobileSupport" class="mobileSupport">Checking phone Bluetooth support…</div>
+<div id="voiceStatus" class="voiceStatus">Voice control off. Enable it once, allow microphone access, then say <strong>RECORD</strong> or <strong>STOP</strong>.</div>
+
+<section class="sectionGrid setupSection">
+  <div class="panel box">
+    <div class="eyebrow">Archer & Session Setup</div>
+    <div class="fields">
+      <div class="field"><label>Archer name</label><input id="archerName" type="text" value="Archer"></div>
+      <div class="field"><label>Handedness</label><select id="handedness"><option value="Right">Right</option><option value="Left">Left</option></select></div>
+      <div class="field"><label>Bow type</label><select id="bowType"><option>Recurve</option><option>Barebow</option><option>Compound</option><option>Other</option></select></div>
+      <div class="field"><label>Draw weight (lb)</label><input id="drawWeight" type="number" value="26"></div>
+      <div class="field"><label>Distance (m)</label><input id="distanceM" type="number" value="15"></div>
+      <div class="field"><label>Target face</label><select id="targetFace"><option value="40">40 cm</option><option value="60">60 cm</option><option value="80">80 cm</option><option value="122">122 cm</option></select></div>
+    </div>
+    <div class="profileActions"><button id="saveProfileBtn">SAVE PROFILE</button></div>
+    <div id="profileChips" class="chips"></div>
+  </div>
+
+  <div class="panel box">
+    <div class="eyebrow">Live State</div>
+    <div class="stateRow"><span>Mode</span><b id="modeLabel">NORMAL MODE</b></div>
+    <div class="stateRow"><span>Trial</span><b id="trialState">READY</b></div>
+    <div class="stateRow"><span>Drona shots</span><b id="sessionCount">0</b></div>
+    <div class="stateRow"><span>Haptic events</span><b id="hapticCount">0</b></div>
+    <div id="trialHint" class="hint">Connect, stabilize, then press SET or say RECORD.</div>
+    <div class="profileActions"><button id="sessionBtn" class="gold">✦ START DRONA SESSION</button></div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="panel card">
+    <div class="chartHeader">
+      <div><div class="eyebrow">Live Trial</div><div class="sectionTitle">Orientation & Stability</div></div>
+      <div class="timerPill">⏱ <span id="holdTimeText">0.00 s</span></div>
+    </div>
+    <div class="chartWrap"><canvas id="mainChart"></canvas></div>
+  </div>
+
+  <div class="panel card">
+    <div class="scoreBox"><div class="scoreLabel">Stability score</div><div id="stability" class="scoreValue">—</div><div id="recordBadge" class="badge">WAITING FOR SET / RECORD</div></div>
+    <div class="metricRow"><div class="metric"><div class="k">Roll deviation</div><div id="roll" class="v">—</div></div><div class="metric"><div class="k">Pitch deviation</div><div id="pitch" class="v">—</div></div></div>
+    <div class="targetCard">
+      <h3>Shot Result</h3>
+      <div id="targetHint" class="targetHint">After STOP, use Auto Vision or switch to Manual target entry.</div>
+
+      <div class="resultModeTabs">
+        <button id="visionModeBtn" class="resultModeBtn active">📷 AUTO VISION</button>
+        <button id="manualModeBtn" class="resultModeBtn">🎯 MANUAL</button>
+      </div>
+
+      <div id="visionPanel" class="visionPanel active">
+        <div class="visionBox">
+          <div class="eyebrow">Reference Target</div>
+          <div class="visionRow" style="margin-top:8px">
+            <button id="captureReferenceBtn">📷 TAKE REFERENCE</button>
+            <button id="uploadReferenceBtn">⬆ UPLOAD REFERENCE</button>
+          </div>
+          <input id="captureReferenceInput" class="hiddenFile" type="file" accept="image/*" capture="environment">
+          <input id="uploadReferenceInput" class="hiddenFile" type="file" accept="image/*">
+          <div id="referenceStatus" class="visionStatus">No reference image stored yet.</div>
+        </div>
+
+        <div class="visionBox">
+          <div class="eyebrow">Current Shot</div>
+          <div class="visionRow" style="margin-top:8px">
+            <button id="captureShotBtn" class="primary" disabled>📷 TAKE PHOTO</button>
+            <button id="uploadShotBtn" disabled>⬆ UPLOAD PHOTO</button>
+          </div>
+          <input id="captureShotInput" class="hiddenFile" type="file" accept="image/*" capture="environment">
+          <input id="uploadShotInput" class="hiddenFile" type="file" accept="image/*">
+          <div id="visionStatus" class="visionStatus">Complete a trial, then capture or upload the target photo.</div>
+          <img id="visionPreview" class="visionPreview" alt="ESS-ARCHERY vision result">
+        </div>
+
+        <div class="visionBox">
+          <div class="eyebrow">Editable Vision Result</div>
+          <div class="visionFields">
+            <div class="visionField"><label>Horizontal X (cm)</label><input id="visionX" type="number" step="0.1" placeholder="—" disabled></div>
+            <div class="visionField"><label>Vertical Y (cm)</label><input id="visionY" type="number" step="0.1" placeholder="—" disabled></div>
+            <div class="visionField"><label>Radial Error (cm)</label><input id="visionRadial" type="number" step="0.1" placeholder="—" disabled></div>
+            <div class="visionField"><label>Ring</label><input id="visionRing" type="text" inputmode="numeric" placeholder="—" disabled></div>
+          </div>
+          <div id="visionMeta" class="visionMeta"></div>
+          <div class="tinyNote">Automatic values remain editable. Editing X/Y recalculates radial distance. If impact detection is visibly wrong, switch to Manual and tap the real hit position.</div>
+          <div class="apiRow"><input id="visionApiUrl" type="url" placeholder="Vision API URL, e.g. https://...trycloudflare.com"><button id="saveVisionApiBtn">SAVE API URL</button></div>
+          <div class="tinyNote">Laptop test: http://127.0.0.1:8000. Phone/PWA: use an HTTPS API URL.</div>
+        </div>
+      </div>
+
+      <div id="manualPanel" class="manualPanel">
+        <div class="targetAimWrap">
+          <div class="targetFaceShell"><svg id="targetFaceSvg" class="targetFaceSvg locked" viewBox="-120 -120 240 240" aria-label="Tap arrow landing position"><rect x="-120" y="-120" width="240" height="240" rx="12" fill="#070b10"></rect><g id="targetRings"></g><line x1="-105" y1="0" x2="105" y2="0" stroke="rgba(255,255,255,.22)" stroke-width=".7"></line><line x1="0" y1="-105" x2="0" y2="105" stroke="rgba(255,255,255,.22)" stroke-width=".7"></line><g id="hitMarker" style="display:none"><circle r="5.5" fill="none" stroke="#1db7ff" stroke-width="2.5"></circle><line x1="-9" y1="0" x2="9" y2="0" stroke="#1db7ff" stroke-width="2"></line><line x1="0" y1="-9" x2="0" y2="9" stroke="#1db7ff" stroke-width="2"></line></g></svg></div>
+          <div class="targetReadout"><div class="coordBox"><span class="k">Horizontal X</span><span id="hitX" class="v">—</span></div><div class="coordBox"><span class="k">Vertical Y</span><span id="hitY" class="v">—</span></div><div class="coordBox"><span class="k">Radial Error</span><span id="hitRadius" class="v">—</span></div><div class="coordBox"><span class="k">Auto Ring</span><span id="hitRing" class="v">—</span></div><div class="coordLegend">Tap the arrow landing point. Center = (0,0), +X right, +Y up.</div></div>
+        </div>
+      </div>
+
+      <div class="targetActions"><button id="clearTargetBtn">CLEAR RESULT</button><button id="saveShotBtn" class="primary" disabled>SAVE SHOT</button><button id="discardBtn" class="danger" disabled>DISCARD</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="sensors sensorSection">
+  <div class="panel card"><div class="sectionTitle" style="font-size:22px;margin-bottom:12px">Acceleration</div><div class="sensorGrid"><div class="sensor"><span>AX</span><b id="ax">—</b></div><div class="sensor"><span>AY</span><b id="ay">—</b></div><div class="sensor"><span>AZ</span><b id="az">—</b></div></div></div>
+  <div class="panel card"><div class="sectionTitle" style="font-size:22px;margin-bottom:12px">Gyroscope</div><div class="sensorGrid"><div class="sensor"><span>GX</span><b id="gx">—</b></div><div class="sensor"><span>GY</span><b id="gy">—</b></div><div class="sensor"><span>GZ</span><b id="gz">—</b></div></div></div>
+</section>
+
+<section class="analytics analyticsSection">
+  <div class="panel card"><div class="eyebrow">Drona Session Analytics</div><div class="sectionTitle">Radial Error vs Stability</div><div class="analyticsChart"><canvas id="analyticsChart"></canvas></div></div>
+  <div class="panel card"><div class="eyebrow">Coach Layer</div><div class="sectionTitle">Drona Insight</div><div id="dronaInsight" class="insight"><strong>No Drona data yet.</strong><br>Start a session and save accepted shots.</div><div class="sectionTitle" style="font-size:20px;margin-top:18px">Shot History</div><div class="historyWrap"><table class="history"><thead><tr><th>#</th><th>X cm</th><th>Y cm</th><th>R cm</th><th>Ring</th><th>Hold</th><th>Avg Stability</th><th>Haptic</th></tr></thead><tbody id="historyBody"></tbody></table></div></div>
+</section>
+
+<section class="panel exports exportsSection"><button id="dronaRawBtn">DRONA RAW CSV</button><button id="dronaSummaryBtn">DRONA SUMMARY CSV</button><button id="normalRawBtn">NORMAL RAW CSV</button><button id="normalSummaryBtn">NORMAL SUMMARY CSV</button><button id="pngBtn">GRAPH PNG</button><button id="clearGraphBtn">CLEAR GRAPH</button><button id="clearSavedBtn" class="danger">CLEAR SAVED DATA</button></section>
+<div class="footer">Field App V1.6.1 • RECORD / STOP voice control • Auto Vision + Manual target workflow.</div>
+</div>
+
+<div class="mobileDock"><button id="mConnectBtn" class="primary">◉ CONNECT</button><button id="mSetStopBtn" class="primary" disabled>➤ SET</button><button id="mHapticBtn" class="gold" disabled>⚡ HAPTIC</button><button id="mSessionBtn" class="gold">✦ DRONA</button></div>
+
+<script>
+const SERVICE_UUID='7e400001-b5a3-f393-e0a9-e50e24dcca9e',DATA_UUID='7e400002-b5a3-f393-e0a9-e50e24dcca9e',CONTROL_UUID='7e400003-b5a3-f393-e0a9-e50e24dcca9e',STATUS_UUID='7e400004-b5a3-f393-e0a9-e50e24dcca9e';
+const ACC_SCALE=0.000061,GYRO_SCALE=0.00875,$=id=>document.getElementById(id);
+let device=null,service=null,dataChar=null,controlChar=null,statusChar=null,trialState='READY',currentSamples=[],baseline=[],baseRoll=0,basePitch=0,referenceLocked=false,stabilityEMA=null,selectedHit=null,trialStartMs=0,timerHandle=null,normalShots=[],dronaShots=[],dronaActive=false,sessionId=0,nextSessionId=1,hapticEvents=[],hapticUiLock=false;
+const HAPTIC_PULSE_MS=120,HAPTIC_UI_COOLDOWN_MS=700,HAPTIC_GUARD_MS=200;
+const PROFILE_KEY='ess_archery_profile_v1_1';
+const FIELD_DATA_KEY='ess_archery_field_data_v1_4';
+const LEGACY_FIELD_DATA_KEY='ess_archery_field_data_v1_3';
+let deferredInstallPrompt=null,wakeLock=null;
+const VISION_API_KEY='ess_archery_vision_api_v1';
+const VISION_DB_NAME='ess_archery_vision_assets_v1';
+const VISION_DB_STORE='assets';
+const VISION_REFERENCE_KEY='reference_target';
+let resultEntryMode='VISION';
+let visionReferenceBlob=null;
+let visionLastAuto=null;
+let visionEditing=false;
+
+
+// ============================================================
+// VOICE CONTROL V1.5
+// Browser speech recognition: spoken RECORD / STOP. RECORD still sends firmware BLE command SET.
+// No firmware changes are required.
+// ============================================================
+const SpeechRecognitionCtor=window.SpeechRecognition||window.webkitSpeechRecognition;
+let voiceRecognition=null;
+let voiceArmed=false;
+let voiceListening=false;
+let voiceRestartTimer=null;
+let voiceLastCommandMs=0;
+const VOICE_COMMAND_COOLDOWN_MS=1500;
+const VOICE_ACK_TIMEOUT_MS=3000;
+let pendingVoiceCommand=null;
+let pendingVoiceTimer=null;
+
+
+const isPhoneView=()=>window.matchMedia('(max-width:740px)').matches;
+
+function getProfile(){return{name:$('archerName').value.trim()||'Archer',handedness:$('handedness').value,bowType:$('bowType').value,drawWeight:Number($('drawWeight').value||0),distanceM:Number($('distanceM').value||0),targetFace:Number($('targetFace').value||0)}}
+function renderProfile(){const p=getProfile();$('profileChips').innerHTML=`<span class="chip">${p.name}</span><span class="chip">${p.handedness}-handed</span><span class="chip">${p.bowType}</span><span class="chip">${p.drawWeight} lb</span><span class="chip">${p.distanceM} m</span><span class="chip">${p.targetFace} cm face</span>`}
+function saveProfile(){localStorage.setItem(PROFILE_KEY,JSON.stringify(getProfile()));renderProfile()}
+function persistFieldData(){try{localStorage.setItem(FIELD_DATA_KEY,JSON.stringify({normalShots,dronaShots,dronaActive,sessionId,nextSessionId,savedAt:new Date().toISOString()}))}catch(e){console.warn('Field backup failed',e)}}
+function loadFieldData(){try{const raw=localStorage.getItem(FIELD_DATA_KEY)||localStorage.getItem(LEGACY_FIELD_DATA_KEY);const d=JSON.parse(raw||'null');if(!d)return;if(Array.isArray(d.normalShots))normalShots=d.normalShots;if(Array.isArray(d.dronaShots))dronaShots=d.dronaShots;dronaActive=!!d.dronaActive;sessionId=Number(d.sessionId||0);nextSessionId=Math.max(Number(d.nextSessionId||1),sessionId+1)}catch(e){console.warn('Field backup restore failed',e)}}
+function clearSavedFieldData(){if(!confirm('Clear all saved Normal and Drona shots stored on this device? Export CSV first if you need the data.'))return;normalShots=[];dronaShots=[];dronaActive=false;sessionId=0;nextSessionId=1;localStorage.removeItem(FIELD_DATA_KEY);renderHistory();renderAnalytics();updateModeUi()}
+function loadProfile(){let p=null;try{p=JSON.parse(localStorage.getItem(PROFILE_KEY)||'null')}catch(e){};if(!p)p={name:'Archer',handedness:'Right',bowType:'Recurve',drawWeight:26,distanceM:15,targetFace:40};$('archerName').value=p.name;$('handedness').value=p.handedness;$('bowType').value=p.bowType;$('drawWeight').value=p.drawWeight;$('distanceM').value=p.distanceM;$('targetFace').value=String(p.targetFace);renderProfile()}
+$('saveProfileBtn').onclick=saveProfile;
+
+const hapticMarkerPlugin={id:'hapticMarkers',afterDatasetsDraw(chart){if(!hapticEvents.length||!chart.data.labels.length)return;const{ctx,chartArea,scales}=chart,x=scales.x;ctx.save();ctx.strokeStyle='#d8a74b';ctx.fillStyle='#f3d389';ctx.lineWidth=1.5;ctx.setLineDash([5,4]);ctx.font='700 10px Segoe UI';hapticEvents.forEach(e=>{let idx=0,best=Infinity;chart.data.labels.forEach((label,i)=>{const d=Math.abs(Number(label)-e.t);if(d<best){best=d;idx=i}});const px=x.getPixelForValue(idx);if(px<chartArea.left||px>chartArea.right)return;ctx.beginPath();ctx.moveTo(px,chartArea.top);ctx.lineTo(px,chartArea.bottom);ctx.stroke();ctx.setLineDash([]);ctx.fillText('H',Math.min(px+4,chartArea.right-10),chartArea.top+12);ctx.setLineDash([5,4])});ctx.restore()}};
+Chart.register(hapticMarkerPlugin);
+const mainChart=new Chart($('mainChart'),{type:'line',data:{labels:[],datasets:[{label:'Stability',data:[],borderColor:'#1db7ff',borderWidth:2.5,pointRadius:0,tension:.18,yAxisID:'y'},{label:'Roll °',data:[],borderColor:'#f2f4f6',borderWidth:1.5,pointRadius:0,tension:.18,yAxisID:'y1'},{label:'Pitch °',data:[],borderColor:'#8a98aa',borderWidth:1.5,pointRadius:0,tension:.18,yAxisID:'y1'}]},options:{animation:false,responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#c7cfda'}}},scales:{x:{ticks:{color:'#7a8898',maxTicksLimit:10},grid:{color:'#111a23'}},y:{min:0,max:100,ticks:{color:'#8a97a7'},grid:{color:'#16212c'}},y1:{position:'right',ticks:{color:'#8a97a7'},grid:{drawOnChartArea:false}}}}});
+const analyticsChart=new Chart($('analyticsChart'),{type:'scatter',data:{datasets:[{label:'Accepted coordinate shots',data:[],backgroundColor:'#d8a74b',borderColor:'#f3d389',pointRadius:6,pointHoverRadius:8}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#c7cfda'}}},scales:{x:{title:{display:true,text:'Average Stability',color:'#98a6b6'},min:0,max:100,ticks:{color:'#7a8898'},grid:{color:'#15202b'}},y:{title:{display:true,text:'Radial Error (% target radius)',color:'#98a6b6'},beginAtZero:true,ticks:{color:'#7a8898'},grid:{color:'#15202b'}}}}});
+
+
+
+function speakFeedback(text){
+  try{
+    if(!('speechSynthesis' in window))return;
+    window.speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text);
+    u.lang='en-US';
+    u.rate=1.05;
+    u.pitch=1.0;
+    u.volume=1.0;
+    window.speechSynthesis.speak(u);
+  }catch(e){console.warn('Speech feedback unavailable',e)}
+}
+function vibrateFeedback(pattern){
+  try{if(navigator.vibrate)navigator.vibrate(pattern)}catch(e){}
+}
+function clearPendingVoiceCommand(){
+  clearTimeout(pendingVoiceTimer);
+  pendingVoiceTimer=null;
+  pendingVoiceCommand=null;
+}
+function armVoiceConfirmation(command){
+  clearPendingVoiceCommand();
+  pendingVoiceCommand={command,sentAt:Date.now()};
+  pendingVoiceTimer=setTimeout(()=>{
+    const cmd=pendingVoiceCommand?.command;
+    if(!cmd)return;
+    setVoiceStatus(`<strong>${cmd}</strong> was sent, but ESS-ARCHERY did not confirm the expected state. Repeat the command before continuing.`,'bad');
+    speakFeedback(cmd==='RECORD'?'Record failed. Repeat command.':'Stop failed. Repeat command.');
+    vibrateFeedback([180,90,180]);
+    clearPendingVoiceCommand();
+  },VOICE_ACK_TIMEOUT_MS);
+}
+function confirmVoiceFromDeviceState(state){
+  if(!pendingVoiceCommand)return;
+  const cmd=pendingVoiceCommand.command;
+
+  if(cmd==='RECORD'&&state==='SETTING'){
+    setVoiceStatus('RECORD command received by ESS-ARCHERY — waiting for <strong>RECORDING</strong>…','command');
+    return;
+  }
+  if(cmd==='RECORD'&&state==='RECORDING'){
+    clearPendingVoiceCommand();
+    setVoiceStatus('✓ ESS-ARCHERY confirmed <strong>RECORDING</strong>.','listening');
+    speakFeedback('Recording');
+    vibrateFeedback(90);
+    return;
+  }
+  if(cmd==='STOP'&&state==='COMPLETE'){
+    clearPendingVoiceCommand();
+    setVoiceStatus('✓ ESS-ARCHERY confirmed <strong>SHOT COMPLETE</strong>.','listening');
+    speakFeedback('Shot complete');
+    vibrateFeedback([70,60,70]);
+  }
+}
+
+function setVoiceStatus(message,kind=''){
+  const el=$('voiceStatus');if(!el)return;
+  el.className='voiceStatus'+(kind?' '+kind:'');
+  el.innerHTML=message;
+}
+function updateVoiceButtons(){
+  ['voiceBtn','mVoiceBtn'].forEach(id=>{
+    const b=$(id);if(!b)return;
+    b.textContent=voiceArmed?'🎙 VOICE ON':'🎙 VOICE OFF';
+    b.classList.toggle('voiceArmed',voiceArmed);
+  });
+}
+function normalizeVoiceText(text){
+  return String(text||'').toLowerCase().replace(/[^a-z]/g,' ').replace(/\s+/g,' ').trim();
+}
+async function handleVoiceCommand(command){
+  const now=Date.now();
+  if(now-voiceLastCommandMs<VOICE_COMMAND_COOLDOWN_MS)return;
+  voiceLastCommandMs=now;
+  const connected=!!device?.gatt?.connected;
+
+  if(command==='RECORD'){
+    if(trialState!=='READY'){
+      setVoiceStatus(`Heard <strong>RECORD</strong>, but trial state is <strong>${trialState}</strong> — ignored.`,'command');
+      return;
+    }
+    if(!connected){
+      setVoiceStatus('Heard <strong>RECORD</strong> ✓ &nbsp;•&nbsp; BLE not connected, so no command was sent.','bad');
+      speakFeedback('Bluetooth not connected');
+      vibrateFeedback([180,90,180]);
+      return;
+    }
+    setVoiceStatus('Heard <strong>RECORD</strong> ✓ &nbsp;•&nbsp; sent — waiting for device confirmation…','command');
+    try{
+      // Firmware command remains SET; only the spoken user command changes.
+      await sendCommand('SET');
+      armVoiceConfirmation('RECORD');
+    }catch(err){
+      console.error(err);
+      setVoiceStatus('RECORD recognized, but BLE write failed.','bad');
+      speakFeedback('Record failed');
+      vibrateFeedback([180,90,180]);
+    }
+    return;
+  }
+
+  if(command==='STOP'){
+    if(trialState!=='RECORDING'){
+      setVoiceStatus(`Heard <strong>STOP</strong>, but trial state is <strong>${trialState}</strong> — ignored.`,'command');
+      return;
+    }
+    if(!connected){
+      setVoiceStatus('Heard <strong>STOP</strong> ✓ &nbsp;•&nbsp; BLE not connected, so no command was sent.','bad');
+      speakFeedback('Bluetooth not connected');
+      vibrateFeedback([180,90,180]);
+      return;
+    }
+    setVoiceStatus('Heard <strong>STOP</strong> ✓ &nbsp;•&nbsp; sent — waiting for device confirmation…','command');
+    try{
+      await sendCommand('STOP');
+      armVoiceConfirmation('STOP');
+    }catch(err){
+      console.error(err);
+      setVoiceStatus('STOP recognized, but BLE write failed.','bad');
+      speakFeedback('Stop failed');
+      vibrateFeedback([180,90,180]);
+    }
+  }
+}
+function scheduleVoiceRestart(delay=350){
+  clearTimeout(voiceRestartTimer);
+  if(!voiceArmed)return;
+  voiceRestartTimer=setTimeout(()=>{
+    if(!voiceArmed||voiceListening||!voiceRecognition)return;
+    try{voiceRecognition.start()}catch(e){
+      if(e?.name!=='InvalidStateError')console.warn('Voice restart failed',e);
+    }
+  },delay);
+}
+function initVoiceRecognition(){
+  if(voiceRecognition)return true;
+  if(!SpeechRecognitionCtor){
+    setVoiceStatus('Voice recognition is not available in this browser. Use current Chrome for the field test.','bad');
+    return false;
+  }
+
+  const r=new SpeechRecognitionCtor();
+  r.lang='en-US';
+  r.continuous=true;
+  r.interimResults=false;
+  r.maxAlternatives=3;
+
+  r.onstart=()=>{
+    voiceListening=true;
+    if(voiceArmed)setVoiceStatus('🎙 Voice armed — listening for <strong>RECORD</strong> / <strong>STOP</strong>.','listening');
+  };
+
+  r.onresult=event=>{
+    const alternatives=[];
+    const result=event.results[event.results.length-1];
+    for(let i=0;i<result.length;i++)alternatives.push(normalizeVoiceText(result[i].transcript));
+
+    let command=null,heard=alternatives[0]||'';
+    const heardRecord=alternatives.some(t=>/\brecord(?:ing)?\b/.test(t)||t==='start record'||t==='start recording');
+    const heardStop=alternatives.some(t=>/\bstop\b/.test(t));
+    if(heardRecord)command='RECORD';
+    else if(heardStop)command='STOP';
+
+    if(command)handleVoiceCommand(command);
+    else{
+      setVoiceStatus(`Heard: <strong>${heard||'—'}</strong> &nbsp;•&nbsp; no command matched. Say it again.`,'bad');
+      speakFeedback('Repeat command');
+      vibrateFeedback([80,70,80]);
+    }
+  };
+
+  r.onerror=event=>{
+    voiceListening=false;
+    const err=event.error||'unknown';
+    if(err==='not-allowed'||err==='service-not-allowed'){
+      voiceArmed=false;updateVoiceButtons();
+      setVoiceStatus('Microphone / speech permission was denied. Allow microphone access, then enable Voice Control again.','bad');
+      return;
+    }
+    if(err==='network'){
+      setVoiceStatus('Speech recognition network error. Chrome may require internet for recognition.','bad');
+    }else if(err!=='no-speech'&&err!=='aborted'){
+      setVoiceStatus(`Voice recognition error: <strong>${err}</strong>.`,'bad');
+    }
+  };
+
+  r.onend=()=>{
+    voiceListening=false;
+    if(voiceArmed){
+      setVoiceStatus('🎙 Voice armed — restarting listener…','listening');
+      scheduleVoiceRestart(650);
+    }
+  };
+
+  voiceRecognition=r;
+  return true;
+}
+async function ensureMicrophonePermission(){
+  if(!navigator.mediaDevices?.getUserMedia)return true;
+  try{
+    if(navigator.permissions?.query){
+      const p=await navigator.permissions.query({name:'microphone'});
+      if(p.state==='granted')return true;
+      if(p.state==='denied'){setVoiceStatus('Microphone permission is blocked for this site. Enable it in browser site settings.','bad');return false}
+    }
+  }catch(e){}
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+    stream.getTracks().forEach(t=>t.stop());
+    return true;
+  }catch(e){
+    console.error(e);
+    setVoiceStatus('Microphone permission was not granted. Allow it once for this site, then enable Voice again.','bad');
+    return false;
+  }
+}
+async function startVoiceControl(){
+  if(!initVoiceRecognition())return;
+  if(!(await ensureMicrophonePermission()))return;
+  voiceArmed=true;updateVoiceButtons();
+  setVoiceStatus('Starting microphone…','listening');
+  speakFeedback('Voice ready');
+  vibrateFeedback(60);
+  try{voiceRecognition.start()}catch(e){
+    if(e?.name!=='InvalidStateError'){console.error(e);setVoiceStatus('Could not start voice recognition.','bad')}
+  }
+}
+function stopVoiceControl(){
+  voiceArmed=false;updateVoiceButtons();
+  clearTimeout(voiceRestartTimer);
+  clearPendingVoiceCommand();
+  try{voiceRecognition?.abort()}catch(e){}
+  voiceListening=false;
+  setVoiceStatus('Voice control off. Enable it once, allow microphone access, then say <strong>RECORD</strong> or <strong>STOP</strong>.');
+}
+function toggleVoiceControl(){voiceArmed?stopVoiceControl():startVoiceControl()}
+
+function setConnection(connected,name=''){const c=$('connInfo');c.classList.toggle('ok',connected);c.innerHTML=`<span class="dot"></span>${connected?'Connected · '+name:'Disconnected'}`;updateControls()}
+function updateControls(){const connected=!!device?.gatt?.connected,stopMode=trialState==='RECORDING',disabled=!connected||!(trialState==='READY'||trialState==='RECORDING');['setStopBtn','mSetStopBtn'].forEach(id=>{const b=$(id);b.disabled=disabled;b.textContent=stopMode?'■ STOP':'➤ SET';b.className=stopMode?'warn':'primary'});const hapticDisabled=!connected||trialState!=='RECORDING'||hapticUiLock;['hapticBtn','mHapticBtn'].forEach(id=>{const b=$(id);b.disabled=hapticDisabled;b.textContent=hapticUiLock?'⚡ WAIT':'⚡ HAPTIC'});const mb=$('mConnectBtn');if(mb){mb.textContent=connected?'⏏ DISCONNECT':'◉ CONNECT';mb.className=connected?'':'primary'}if($('mStateChip'))$('mStateChip').textContent=trialState}
+function updateModeUi(){
+  $('modeLabel').textContent=dronaActive?`DRONA SESSION #${String(sessionId).padStart(3,'0')}`:'NORMAL MODE';
+  $('sessionCount').textContent=dronaActive?dronaShots.length:0;
+  $('sessionBtn').textContent=dronaActive?'END DRONA SESSION':'✦ START DRONA SESSION';$('sessionBtn').className=dronaActive?'warn':'gold';
+  $('mSessionBtn').textContent=dronaActive?'END DRONA':'✦ DRONA';$('mSessionBtn').className=dronaActive?'warn':'gold';
+  updateResultHint();updateSaveButton();
+}
+function setTrialState(newState){
+  trialState=newState;$('trialState').textContent=newState;$('recordBadge').textContent=(newState==='READY')?'WAITING FOR SET / RECORD':newState;
+  const msg={READY:'Connect, stabilize, then press SET or say RECORD.',SETTING:'Reference settling… keep the bow steady.',RECORDING:'Recording live movement. Manual HAPTIC is now armed for field testing.',COMPLETE:'Trial complete. Use Auto Vision or Manual target entry, then save or discard.'};
+  $('trialHint').textContent=msg[newState]||newState;
+  if(newState==='SETTING')freshTrial();
+  if(newState==='RECORDING'){startTimer();requestWakeLock()}
+  if(newState==='COMPLETE'){$('discardBtn').disabled=false;stopTimer();releaseWakeLock();if(isPhoneView())setTimeout(()=>document.querySelector('.targetCard')?.scrollIntoView({behavior:'smooth',block:'center'}),180)}
+  if(newState==='READY')releaseWakeLock();
+  updateTargetEntryState();updateVisionControls();updateControls();updateSaveButton();updateResultHint();
+}
+function startTimer(){stopTimer();timerHandle=setInterval(()=>{if(trialState==='RECORDING')$('holdTimeText').textContent=((performance.now()-trialStartMs)/1000).toFixed(2)+' s'},100)}
+function stopTimer(){if(timerHandle){clearInterval(timerHandle);timerHandle=null}}
+function freshTrial(){currentSamples=[];baseline=[];referenceLocked=false;stabilityEMA=null;hapticEvents=[];hapticUiLock=false;$('hapticCount').textContent='0';trialStartMs=performance.now();$('holdTimeText').textContent='0.00 s';clearHitSelection();clearGraph();clearValues()}
+function clearGraph(){mainChart.data.labels=[];mainChart.data.datasets.forEach(d=>d.data=[]);mainChart.update()}
+function clearValues(){['stability','roll','pitch','ax','ay','az','gx','gy','gz'].forEach(id=>$(id).textContent='—')}
+function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+function orientation(ax,ay,az){return{roll:Math.atan2(ay,az)*180/Math.PI,pitch:Math.atan2(-ax,Math.sqrt(ay*ay+az*az))*180/Math.PI}}
+function handleData(event){if(trialState!=='RECORDING')return;const dv=event.target.value;if(dv.byteLength<12)return;const ax=dv.getInt16(0,true)*ACC_SCALE,ay=dv.getInt16(2,true)*ACC_SCALE,az=dv.getInt16(4,true)*ACC_SCALE,gx=dv.getInt16(6,true)*GYRO_SCALE,gy=dv.getInt16(8,true)*GYRO_SCALE,gz=dv.getInt16(10,true)*GYRO_SCALE,angles=orientation(ax,ay,az);if(!referenceLocked){baseline.push(angles);if(baseline.length<10)return;baseRoll=baseline.reduce((s,v)=>s+v.roll,0)/baseline.length;basePitch=baseline.reduce((s,v)=>s+v.pitch,0)/baseline.length;referenceLocked=true}const roll=angles.roll-baseRoll,pitch=angles.pitch-basePitch,accMag=Math.sqrt(ax*ax+ay*ay+az*az),gyroMag=Math.sqrt(gx*gx+gy*gy+gz*gz),dynamicAcc=Math.abs(accMag-1.0),orientDev=Math.sqrt(roll*roll+pitch*pitch);let stability=100-(gyroMag*1.1+dynamicAcc*80+orientDev*1.8);stability=clamp(stability,0,100);stabilityEMA=(stabilityEMA===null)?stability:(0.84*stabilityEMA+0.16*stability);const t=(performance.now()-trialStartMs)/1000;currentSamples.push({t,ax,ay,az,gx,gy,gz,roll,pitch,stability:stabilityEMA});$('stability').textContent=Math.round(stabilityEMA);$('roll').textContent=roll.toFixed(2)+'°';$('pitch').textContent=pitch.toFixed(2)+'°';$('ax').textContent=ax.toFixed(3)+' g';$('ay').textContent=ay.toFixed(3)+' g';$('az').textContent=az.toFixed(3)+' g';$('gx').textContent=gx.toFixed(2)+' dps';$('gy').textContent=gy.toFixed(2)+' dps';$('gz').textContent=gz.toFixed(2)+' dps';mainChart.data.labels.push(t.toFixed(2));mainChart.data.datasets[0].data.push(stabilityEMA);mainChart.data.datasets[1].data.push(roll);mainChart.data.datasets[2].data.push(pitch);if(mainChart.data.labels.length>900){mainChart.data.labels.shift();mainChart.data.datasets.forEach(d=>d.data.shift())}mainChart.update('none')}
+function handleStatus(event){
+  const state=new TextDecoder().decode(event.target.value).trim();
+  setTrialState(state);
+  confirmVoiceFromDeviceState(state);
+}
+async function connectBle(){try{if(!navigator.bluetooth){alert('Web Bluetooth is not available. Use Chrome or Edge on HTTPS.');return}device=await navigator.bluetooth.requestDevice({filters:[{namePrefix:'ESS-ARCHERY'}],optionalServices:[SERVICE_UUID]});device.addEventListener('gattserverdisconnected',onDisconnected);const server=await device.gatt.connect();service=await server.getPrimaryService(SERVICE_UUID);dataChar=await service.getCharacteristic(DATA_UUID);controlChar=await service.getCharacteristic(CONTROL_UUID);statusChar=await service.getCharacteristic(STATUS_UUID);await dataChar.startNotifications();dataChar.addEventListener('characteristicvaluechanged',handleData);await statusChar.startNotifications();statusChar.addEventListener('characteristicvaluechanged',handleStatus);const initStatus=await statusChar.readValue();setTrialState(new TextDecoder().decode(initStatus));setConnection(true,device.name||'ESS-ARCHERY')}catch(err){console.error(err);alert('BLE connect failed. Close nRF Connect first and use Chrome/Edge.')}}
+function onDisconnected(){clearPendingVoiceCommand();stopTimer();releaseWakeLock();setConnection(false);setTrialState('READY')}
+async function disconnectBle(){try{if(device?.gatt?.connected)device.gatt.disconnect()}catch(e){console.error(e)}setConnection(false)}
+async function sendCommand(cmd){if(controlChar)await controlChar.writeValue(new TextEncoder().encode(cmd))}
+async function setStopAction(){if(trialState==='READY')await sendCommand('SET');else if(trialState==='RECORDING')await sendCommand('STOP')}
+async function hapticAction(){if(trialState!=='RECORDING'||!controlChar||hapticUiLock)return;hapticUiLock=true;updateControls();const t=Math.max(0,(performance.now()-trialStartMs)/1000);try{await sendCommand('HAPTIC_TEST');hapticEvents.push({t,pulseMs:HAPTIC_PULSE_MS});$('hapticCount').textContent=hapticEvents.length;mainChart.update('none')}catch(err){console.error(err);alert('Haptic command failed. Check BLE connection.')}finally{setTimeout(()=>{hapticUiLock=false;updateControls()},HAPTIC_UI_COOLDOWN_MS)}}
+$('connectBtn').onclick=connectBle;$('mConnectBtn').onclick=()=>device?.gatt?.connected?disconnectBle():connectBle();$('disconnectBtn').onclick=disconnectBle;$('setStopBtn').onclick=setStopAction;$('mSetStopBtn').onclick=setStopAction;$('hapticBtn').onclick=hapticAction;$('mHapticBtn').onclick=hapticAction;
+$('voiceBtn').onclick=toggleVoiceControl;$('mVoiceBtn').onclick=toggleVoiceControl;
+
+async function toggleDrona(){if(trialState==='SETTING'||trialState==='RECORDING'){alert('Finish the current trial before changing session mode.');return}if(trialState==='COMPLETE'&&currentSamples.length){if(!confirm('Discard the unsaved trial and switch mode?'))return;await sendCommand('RESET');currentSamples=[]}if(!dronaActive){dronaShots=[];sessionId=nextSessionId++;dronaActive=true;saveProfile();renderHistory();renderAnalytics()}else{dronaActive=false}persistFieldData();updateModeUi()}
+$('sessionBtn').onclick=toggleDrona;$('mSessionBtn').onclick=toggleDrona;
+
+const TARGET_RADIUS_UNITS=100,TARGET_VIEW_LIMIT=1.20;
+function drawTargetFace(){
+  const g=$('targetRings');if(!g)return;g.innerHTML='';
+  const rings=[
+    {r:100,c:'#f2f2ed'},{r:90,c:'#f2f2ed'},
+    {r:80,c:'#1a1b1e'},{r:70,c:'#1a1b1e'},
+    {r:60,c:'#36a7dc'},{r:50,c:'#36a7dc'},
+    {r:40,c:'#e63b43'},{r:30,c:'#e63b43'},
+    {r:20,c:'#f4cd45'},{r:10,c:'#f4cd45'}
+  ];
+  rings.forEach((ring,i)=>{const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('r',ring.r);c.setAttribute('cx','0');c.setAttribute('cy','0');c.setAttribute('fill',ring.c);c.setAttribute('stroke',i<2?'#b5b5b5':'rgba(255,255,255,.7)');c.setAttribute('stroke-width','0.8');g.appendChild(c)});
+  const center=document.createElementNS('http://www.w3.org/2000/svg','circle');center.setAttribute('r','1.8');center.setAttribute('fill','#222');g.appendChild(center);
+}
+function scoreFromRadialNorm(r){if(!Number.isFinite(r)||r>1)return 0;if(r<=0.1)return 10;return Math.max(1,11-Math.ceil(r*10))}
+function hitGeometry(hit=selectedHit){
+  if(!hit)return null;
+  const face=Number(getProfile().targetFace||0),radiusCm=face/2;
+  const xCm=Number.isFinite(hit.xCmOverride)?hit.xCmOverride:hit.xNorm*radiusCm;
+  const yCm=Number.isFinite(hit.yCmOverride)?hit.yCmOverride:hit.yNorm*radiusCm;
+  const xNorm=xCm/radiusCm,yNorm=yCm/radiusCm;
+  const calculatedRadial=Math.hypot(xCm,yCm),radialCm=Number.isFinite(hit.radialCmOverride)?hit.radialCmOverride:calculatedRadial;
+  const radialNorm=radialCm/radiusCm;
+  const ringScore=(hit.ringOverride!==undefined&&hit.ringOverride!==null)?hit.ringOverride:scoreFromRadialNorm(radialNorm);
+  return {xNorm,yNorm,xCm,yCm,radialNorm,radialCm,ringScore,source:hit.source||'MANUAL',visionConfidence:hit.visionConfidence||'',impactMode:hit.impactMode||'',corrected:!!hit.corrected};
+}
+function fmtSigned(v,d=1){return `${v>=0?'+':''}${v.toFixed(d)}`}
+function updateHitReadout(){
+  const h=hitGeometry();const marker=$('hitMarker');
+  if(!h){$('hitX').textContent='—';$('hitY').textContent='—';$('hitRadius').textContent='—';$('hitRing').textContent='—';if(marker)marker.style.display='none';return}
+  $('hitX').textContent=`${fmtSigned(h.xCm)} cm`;$('hitY').textContent=`${fmtSigned(h.yCm)} cm`;$('hitRadius').textContent=`${h.radialCm.toFixed(1)} cm`;$('hitRing').textContent=h.ringScore?String(h.ringScore):'MISS';
+  if(marker){marker.style.display='block';marker.setAttribute('transform',`translate(${(h.xNorm*TARGET_RADIUS_UNITS).toFixed(2)} ${(-h.yNorm*TARGET_RADIUS_UNITS).toFixed(2)})`)}
+}
+function updateTargetEntryState(){const svg=$('targetFaceSvg');if(!svg)return;svg.classList.toggle('locked',trialState!=='COMPLETE');svg.setAttribute('aria-disabled',trialState==='COMPLETE'?'false':'true')}
+function targetPointer(e){
+  if(trialState!=='COMPLETE')return;
+  const svg=$('targetFaceSvg'),ctm=svg.getScreenCTM();if(!ctm)return;const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(ctm.inverse());
+  selectedHit={xNorm:clamp(p.x/TARGET_RADIUS_UNITS,-TARGET_VIEW_LIMIT,TARGET_VIEW_LIMIT),yNorm:clamp(-p.y/TARGET_RADIUS_UNITS,-TARGET_VIEW_LIMIT,TARGET_VIEW_LIMIT),source:'MANUAL'};
+  updateHitReadout();updateSaveButton();
+}
+$('targetFaceSvg').addEventListener('pointerdown',targetPointer);
+
+function updateResultHint(){
+  if(!$('targetHint'))return;
+  const prefix=dronaActive?'<b>Drona session active.</b> ':'Normal mode shot. ';
+  if(resultEntryMode==='VISION')$('targetHint').innerHTML=prefix+'After STOP, take or upload a target photo. Auto Vision fills X/Y/radial/ring; review or edit before saving.';
+  else $('targetHint').innerHTML=prefix+'After STOP, tap the arrow landing point. <b>+X right, +Y up</b>; center = (0,0).';
+}
+function setResultEntryMode(mode){
+  resultEntryMode=mode==='MANUAL'?'MANUAL':'VISION';
+  $('visionModeBtn').classList.toggle('active',resultEntryMode==='VISION');$('manualModeBtn').classList.toggle('active',resultEntryMode==='MANUAL');
+  $('visionPanel').classList.toggle('active',resultEntryMode==='VISION');$('manualPanel').classList.toggle('active',resultEntryMode==='MANUAL');
+  if(resultEntryMode==='MANUAL'&&selectedHit?.source?.startsWith('AUTO_VISION'))clearHitSelection();
+  updateResultHint();updateVisionControls();
+}
+$('visionModeBtn').onclick=()=>setResultEntryMode('VISION');$('manualModeBtn').onclick=()=>setResultEntryMode('MANUAL');
+
+function openVisionDb(){return new Promise((resolve,reject)=>{const req=indexedDB.open(VISION_DB_NAME,1);req.onupgradeneeded=()=>{const db=req.result;if(!db.objectStoreNames.contains(VISION_DB_STORE))db.createObjectStore(VISION_DB_STORE)};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
+async function saveVisionBlob(key,blob){const db=await openVisionDb();await new Promise((resolve,reject)=>{const tx=db.transaction(VISION_DB_STORE,'readwrite');tx.objectStore(VISION_DB_STORE).put(blob,key);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close()}
+async function loadVisionBlob(key){const db=await openVisionDb();const value=await new Promise((resolve,reject)=>{const tx=db.transaction(VISION_DB_STORE,'readonly');const req=tx.objectStore(VISION_DB_STORE).get(key);req.onsuccess=()=>resolve(req.result||null);req.onerror=()=>reject(req.error)});db.close();return value}
+function setReferenceStatus(message,kind=''){$('referenceStatus').className='visionStatus'+(kind?' '+kind:'');$('referenceStatus').textContent=message}
+function setVisionStatus(message,kind=''){$('visionStatus').className='visionStatus'+(kind?' '+kind:'');$('visionStatus').textContent=message}
+async function restoreVisionReference(){try{visionReferenceBlob=await loadVisionBlob(VISION_REFERENCE_KEY);setReferenceStatus(visionReferenceBlob?'Reference image stored ✓':'No reference image stored yet.',visionReferenceBlob?'ok':'')}catch(e){console.warn(e);setReferenceStatus('Could not load stored reference.','bad')}updateVisionControls()}
+async function storeReferenceFile(file){if(!file)return;try{await saveVisionBlob(VISION_REFERENCE_KEY,file);visionReferenceBlob=file;setReferenceStatus(`Reference stored ✓ • ${(file.size/1024/1024).toFixed(1)} MB`,'ok');updateVisionControls()}catch(e){console.error(e);setReferenceStatus('Could not store reference image.','bad')}}
+$('captureReferenceBtn').onclick=()=>$('captureReferenceInput').click();$('uploadReferenceBtn').onclick=()=>$('uploadReferenceInput').click();
+$('captureReferenceInput').onchange=e=>{storeReferenceFile(e.target.files?.[0]);e.target.value=''};$('uploadReferenceInput').onchange=e=>{storeReferenceFile(e.target.files?.[0]);e.target.value=''};
+
+function getVisionApiUrl(){return (localStorage.getItem(VISION_API_KEY)||$('visionApiUrl')?.value||'http://127.0.0.1:8000').replace(/\/$/,'')}
+function saveVisionApiUrl(){const v=$('visionApiUrl').value.trim().replace(/\/$/,'');if(!v)return;localStorage.setItem(VISION_API_KEY,v);setVisionStatus('Vision API URL saved.','ok')}
+$('saveVisionApiBtn').onclick=saveVisionApiUrl;
+function loadVisionApiUrl(){$('visionApiUrl').value=localStorage.getItem(VISION_API_KEY)||'http://127.0.0.1:8000'}
+
+function updateVisionControls(){const ready=trialState==='COMPLETE'&&!!visionReferenceBlob;['captureShotBtn','uploadShotBtn'].forEach(id=>{if($(id))$(id).disabled=!ready});}
+$('captureShotBtn').onclick=()=>$('captureShotInput').click();$('uploadShotBtn').onclick=()=>$('uploadShotInput').click();
+$('captureShotInput').onchange=e=>{const f=e.target.files?.[0];e.target.value='';if(f)analyzeShotPhoto(f)};$('uploadShotInput').onchange=e=>{const f=e.target.files?.[0];e.target.value='';if(f)analyzeShotPhoto(f)};
+
+function setVisionInputsEnabled(enabled){['visionX','visionY','visionRadial','visionRing'].forEach(id=>{$(id).disabled=!enabled})}
+function clearVisionResult(){visionLastAuto=null;visionEditing=false;['visionX','visionY','visionRadial','visionRing'].forEach(id=>{$(id).value='';$(id).disabled=true});$('visionMeta').innerHTML='';$('visionPreview').src='';$('visionPreview').classList.remove('show')}
+function applyVisionResult(payload){
+  const a=payload.auto_result,v=payload.vision||{},face=Number(getProfile().targetFace||60),radius=face/2;
+  visionLastAuto=payload;visionEditing=false;
+  $('visionX').value=Number(a.x_cm).toFixed(2);$('visionY').value=Number(a.y_cm).toFixed(2);$('visionRadial').value=Number(a.radial_cm).toFixed(2);$('visionRing').value=String(a.auto_ring);
+  setVisionInputsEnabled(true);
+  selectedHit={xNorm:Number(a.x_cm)/radius,yNorm:Number(a.y_cm)/radius,xCmOverride:Number(a.x_cm),yCmOverride:Number(a.y_cm),radialCmOverride:Number(a.radial_cm),ringOverride:a.auto_ring==='MISS'?0:Number(a.auto_ring),source:'AUTO_VISION',visionConfidence:v.confidence||'',impactMode:v.impact_mode||'NORMAL',corrected:false};
+  $('visionMeta').innerHTML=`<span class="chip">CONF ${v.confidence||'—'}</span><span class="chip">${v.impact_mode||'NORMAL'}</span><span class="chip">ARUCO ${v.aruco_markers||'—'}/4</span>`;
+  if(payload.result_image_data_url){$('visionPreview').src=payload.result_image_data_url;$('visionPreview').classList.add('show')}
+  setVisionStatus('Automatic result ready. Review the impact/result, edit if needed, then SAVE SHOT.','ok');updateHitReadout();updateSaveButton();
+}
+function syncEditedVisionResult(changed){
+  if(!selectedHit||!selectedHit.source?.startsWith('AUTO_VISION'))return;
+  const x=Number($('visionX').value),y=Number($('visionY').value),face=Number(getProfile().targetFace||60),radius=face/2;
+  if(Number.isFinite(x)&&Number.isFinite(y)){selectedHit.xNorm=x/radius;selectedHit.yNorm=y/radius;selectedHit.xCmOverride=x;selectedHit.yCmOverride=y;if(changed==='x'||changed==='y'){$('visionRadial').value=Math.hypot(x,y).toFixed(2);selectedHit.radialCmOverride=Math.hypot(x,y)}}
+  const r=Number($('visionRadial').value);if(Number.isFinite(r))selectedHit.radialCmOverride=r;
+  const ringText=$('visionRing').value.trim().toUpperCase();selectedHit.ringOverride=ringText==='MISS'?0:(Number.isFinite(Number(ringText))?Number(ringText):selectedHit.ringOverride);
+  selectedHit.source='AUTO_VISION_CORRECTED';selectedHit.corrected=true;visionEditing=true;updateHitReadout();updateSaveButton();
+}
+$('visionX').oninput=()=>syncEditedVisionResult('x');$('visionY').oninput=()=>syncEditedVisionResult('y');$('visionRadial').oninput=()=>syncEditedVisionResult('radial');$('visionRing').oninput=()=>syncEditedVisionResult('ring');
+
+async function analyzeShotPhoto(file){
+  if(trialState!=='COMPLETE'){setVisionStatus('Finish the trial first.','bad');return}
+  if(!visionReferenceBlob){setVisionStatus('Store a clean reference target image first.','bad');return}
+  const api=getVisionApiUrl();if(!api){setVisionStatus('Set the Vision API URL first.','bad');return}
+  setVisionStatus('Processing target photo…','busy');clearVisionResult();
+  const fd=new FormData();fd.append('reference',visionReferenceBlob,'reference.jpg');fd.append('current',file,file.name||'shot.jpg');fd.append('target_diameter_cm',String(getProfile().targetFace||60));
+  try{const res=await fetch(`${api}/analyze-shot`,{method:'POST',body:fd});let payload;try{payload=await res.json()}catch(e){throw new Error(`Vision API returned HTTP ${res.status}`)}if(!res.ok)throw new Error(payload?.detail||`HTTP ${res.status}`);if(!payload.success){setVisionStatus(payload.message||'Vision could not determine the shot. Retake or use Manual.','bad');return}applyVisionResult(payload)}catch(err){console.error(err);setVisionStatus(`Vision API error: ${err.message}. Check API URL / HTTPS tunnel.`,'bad')}
+}
+
+function clearHitSelection(){selectedHit=null;updateHitReadout();clearVisionResult();updateSaveButton()}
+$('clearTargetBtn').onclick=clearHitSelection;
+$('targetFace').addEventListener('change',()=>{updateHitReadout();renderProfile()});
+function updateSaveButton(){$('saveShotBtn').disabled=!(trialState==='COMPLETE'&&selectedHit!==null&&currentSamples.length)}
+
+function avg(arr,key){return arr.length?arr.reduce((s,v)=>s+v[key],0)/arr.length:0}function rms(arr,key){return arr.length?Math.sqrt(arr.reduce((s,v)=>s+v[key]*v[key],0)/arr.length):0}function minv(arr,key){return arr.length?Math.min(...arr.map(v=>v[key])):0}
+function buildShot(){
+  const p=getProfile(),hit=hitGeometry();
+  const events=hapticEvents.map(e=>({...e}));
+  const samples=currentSamples.map(v=>{
+    const active=events.some(e=>v.t>=e.t&&v.t<=e.t+e.pulseMs/1000);
+    const guard=events.some(e=>v.t>=e.t&&v.t<=e.t+(e.pulseMs+HAPTIC_GUARD_MS)/1000);
+    return {...v,hapticActive:active?1:0,hapticGuard:guard?1:0};
+  });
+  const analysisSamples=samples.filter(v=>!v.hapticGuard);
+  const clean=analysisSamples.length>=5?analysisSamples:samples;
+  const duration=samples.length?samples[samples.length-1].t:0;
+  return {
+    archer:p.name,handedness:p.handedness,bowType:p.bowType,drawWeight:p.drawWeight,
+    distanceM:p.distanceM,targetFace:p.targetFace,mode:dronaActive?'DRONA':'NORMAL',
+    sessionId:dronaActive?sessionId:'',
+    hitXNorm:hit.xNorm,hitYNorm:hit.yNorm,hitXCm:hit.xCm,hitYCm:hit.yCm,
+    radialNorm:hit.radialNorm,radialCm:hit.radialCm,ringScore:hit.ringScore,
+    resultSource:hit.source||'MANUAL',visionConfidence:hit.visionConfidence||'',visionImpactMode:hit.impactMode||'',visionCorrected:hit.corrected?1:0,
+    duration,
+    sampleCount:samples.length,analysisSampleCount:clean.length,
+    sampleRateHz:duration>0?samples.length/duration:0,
+    avgStability:avg(clean,'stability'),minStability:minv(clean,'stability'),
+    rollMean:avg(clean,'roll'),pitchMean:avg(clean,'pitch'),
+    rollRms:rms(clean,'roll'),pitchRms:rms(clean,'pitch'),
+    gyroRms:Math.sqrt(clean.reduce((s,v)=>s+(v.gx*v.gx+v.gy*v.gy+v.gz*v.gz),0)/Math.max(1,clean.length)),
+    hapticCount:events.length,hapticEvents:events,samples
+  };
+}
+async function saveShot(){if(selectedHit===null||!currentSamples.length)return;const shot=buildShot();if(dronaActive){shot.id=dronaShots.length+1;dronaShots.push(shot);renderHistory();renderAnalytics()}else{shot.id=normalShots.length+1;normalShots.push(shot)}currentSamples=[];clearHitSelection();$('discardBtn').disabled=true;persistFieldData();await sendCommand('RESET');updateModeUi()}
+$('saveShotBtn').onclick=saveShot;
+$('discardBtn').onclick=async()=>{if(!confirm('Discard this trial?'))return;currentSamples=[];clearHitSelection();clearGraph();clearValues();$('discardBtn').disabled=true;await sendCommand('RESET')};
+function renderHistory(){
+  $('historyBody').innerHTML=dronaShots.map(s=>{
+    const has=Number.isFinite(s.hitXCm)&&Number.isFinite(s.hitYCm);
+    return `<tr><td>${s.id}</td><td>${has?fmtSigned(s.hitXCm):'—'}</td><td>${has?fmtSigned(s.hitYCm):'—'}</td><td>${Number.isFinite(s.radialCm)?s.radialCm.toFixed(1):'—'}</td><td>${Number.isFinite(s.ringScore)?(s.ringScore||'MISS'):(s.target??'—')}</td><td>${s.duration.toFixed(2)} s</td><td>${s.avgStability.toFixed(1)}</td><td>${s.hapticCount||0}</td></tr>`
+  }).join('')
+}
+function pearson(xs,ys){const n=xs.length;if(n<2)return 0;const mx=xs.reduce((a,b)=>a+b,0)/n,my=ys.reduce((a,b)=>a+b,0)/n;let num=0,dx=0,dy=0;for(let i=0;i<n;i++){const a=xs[i]-mx,b=ys[i]-my;num+=a*b;dx+=a*a;dy+=b*b}return dx&&dy?num/Math.sqrt(dx*dy):0}
+function renderAnalytics(){
+  const coordShots=dronaShots.filter(s=>Number.isFinite(s.radialNorm));
+  analyticsChart.data.datasets[0].data=coordShots.map(s=>({x:s.avgStability,y:s.radialNorm*100}));
+  analyticsChart.update();
+  if(!coordShots.length){$('dronaInsight').innerHTML='<strong>No coordinate Drona data yet.</strong><br>Start a session and save shots by tapping their landing positions on the target.';return}
+  const meanX=coordShots.reduce((a,s)=>a+s.hitXCm,0)/coordShots.length;
+  const meanY=coordShots.reduce((a,s)=>a+s.hitYCm,0)/coordShots.length;
+  const biasX=Math.abs(meanX)<0.25?'centered horizontally':`${Math.abs(meanX).toFixed(1)} cm ${meanX>0?'right':'left'}`;
+  const biasY=Math.abs(meanY)<0.25?'centered vertically':`${Math.abs(meanY).toFixed(1)} cm ${meanY>0?'high':'low'}`;
+  if(coordShots.length<3){$('dronaInsight').innerHTML=`<strong>Drona is observing.</strong><br>${coordShots.length} coordinate shot(s) recorded. Current mean landing bias: <strong>${biasX}</strong>, <strong>${biasY}</strong>. Collect at least 3 shots before interpreting movement relationships.`;return}
+  const y=coordShots.map(s=>s.radialNorm);
+  const metrics=[
+    {name:'average stability',vals:coordShots.map(s=>s.avgStability)},
+    {name:'hold duration',vals:coordShots.map(s=>s.duration)},
+    {name:'roll deviation',vals:coordShots.map(s=>s.rollRms)},
+    {name:'pitch deviation',vals:coordShots.map(s=>s.pitchRms)},
+    {name:'rotational motion',vals:coordShots.map(s=>s.gyroRms)}
+  ];
+  const ranked=metrics.map(m=>({...m,r:pearson(m.vals,y)})).sort((a,b)=>Math.abs(b.r)-Math.abs(a.r));
+  const best=ranked[0],strength=Math.abs(best.r)>=0.7?'strong':Math.abs(best.r)>=0.4?'moderate':'weak';
+  const effect=best.r>0?'larger radial error':'smaller radial error';
+  $('dronaInsight').innerHTML=`<strong>Drona Insight — ${getProfile().name}</strong><br><br>Across ${coordShots.length} accepted coordinate shots at ${getProfile().distanceM} m, mean landing bias is <strong>${biasX}</strong> and <strong>${biasY}</strong>.<br><br>The strongest current relationship with radial miss distance is <strong>${best.name}</strong>: r = <strong>${best.r.toFixed(2)}</strong> (${strength}). In this session, higher ${best.name} tends to accompany <strong>${effect}</strong>.<br><br><span style="color:var(--muted)">Haptic-active and recovery-guard samples are preserved in raw data but excluded from these natural-stability summary metrics. Prototype observational analytics only; more shots are needed before coaching decisions.</span>`
+}
+function csvEscape(v){const s=String(v??'');return /[,"\n]/.test(s)?`"${s.replaceAll('"','""')}"`:s}
+function downloadCsv(name,text){const blob=new Blob([text],{type:'text/csv'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+function exportSummary(arr,name){
+  if(!arr.length){alert('No saved shots in this dataset.');return}
+  const headers=['archer','handedness','bow_type','draw_weight_lb','distance_m','target_face_cm','mode','session_id','shot_id','hit_x_norm','hit_y_norm','hit_x_cm','hit_y_cm','radial_error_norm','radial_error_cm','ring_score_auto','hold_s','sample_count','analysis_sample_count','effective_sample_rate_hz','avg_stability','min_stability','roll_mean_deg','pitch_mean_deg','roll_rms_deg','pitch_rms_deg','gyro_rms_dps','haptic_count','result_source','vision_confidence','vision_impact_mode','vision_corrected'];
+  const rows=arr.map(s=>[s.archer,s.handedness,s.bowType,s.drawWeight,s.distanceM,s.targetFace,s.mode,s.sessionId,s.id,s.hitXNorm,s.hitYNorm,s.hitXCm,s.hitYCm,s.radialNorm,s.radialCm,s.ringScore,s.duration.toFixed(3),s.sampleCount??s.samples?.length??'',s.analysisSampleCount??'',Number.isFinite(s.sampleRateHz)?s.sampleRateHz.toFixed(2):'',s.avgStability.toFixed(3),s.minStability.toFixed(3),Number.isFinite(s.rollMean)?s.rollMean.toFixed(4):'',Number.isFinite(s.pitchMean)?s.pitchMean.toFixed(4):'',s.rollRms.toFixed(4),s.pitchRms.toFixed(4),s.gyroRms.toFixed(4),s.hapticCount||0,s.resultSource||'MANUAL',s.visionConfidence||'',s.visionImpactMode||'',s.visionCorrected||0]);
+  downloadCsv(name,[headers,...rows].map(r=>r.map(csvEscape).join(',')).join('\n'))
+}
+function exportRaw(arr,name){
+  if(!arr.length){alert('No saved shots in this dataset.');return}
+  const headers=['archer','handedness','bow_type','draw_weight_lb','distance_m','target_face_cm','mode','session_id','shot_id','hit_x_norm','hit_y_norm','hit_x_cm','hit_y_cm','radial_error_norm','radial_error_cm','ring_score_auto','time_s','ax_g','ay_g','az_g','gx_dps','gy_dps','gz_dps','roll_deg','pitch_deg','stability','haptic_active','haptic_guard','result_source','vision_confidence','vision_impact_mode','vision_corrected'];
+  const rows=[];
+  arr.forEach(s=>{s.samples.forEach(v=>rows.push([s.archer,s.handedness,s.bowType,s.drawWeight,s.distanceM,s.targetFace,s.mode,s.sessionId,s.id,s.hitXNorm,s.hitYNorm,s.hitXCm,s.hitYCm,s.radialNorm,s.radialCm,s.ringScore,v.t.toFixed(3),v.ax.toFixed(6),v.ay.toFixed(6),v.az.toFixed(6),v.gx.toFixed(5),v.gy.toFixed(5),v.gz.toFixed(5),v.roll.toFixed(5),v.pitch.toFixed(5),v.stability.toFixed(4),v.hapticActive||0,v.hapticGuard||0,s.resultSource||'MANUAL',s.visionConfidence||'',s.visionImpactMode||'',s.visionCorrected||0]))});
+  downloadCsv(name,[headers,...rows].map(r=>r.map(csvEscape).join(',')).join('\n'))
+}
+$('dronaRawBtn').onclick=()=>exportRaw(dronaShots,`ess_drona_session_${String(sessionId||0).padStart(3,'0')}_raw.csv`);$('dronaSummaryBtn').onclick=()=>exportSummary(dronaShots,`ess_drona_session_${String(sessionId||0).padStart(3,'0')}_summary.csv`);$('normalRawBtn').onclick=()=>exportRaw(normalShots,'ess_normal_raw.csv');$('normalSummaryBtn').onclick=()=>exportSummary(normalShots,'ess_normal_summary.csv');$('pngBtn').onclick=()=>{const a=document.createElement('a');a.href=$('mainChart').toDataURL('image/png');a.download='ess_stability_graph.png';a.click()};$('clearGraphBtn').onclick=clearGraph;$('clearSavedBtn').onclick=clearSavedFieldData;
+async function requestWakeLock(){try{if('wakeLock' in navigator&&document.visibilityState==='visible'){wakeLock=await navigator.wakeLock.request('screen')}}catch(e){console.warn('Wake lock unavailable',e)}}
+async function releaseWakeLock(){try{if(wakeLock){await wakeLock.release();wakeLock=null}}catch(e){console.warn(e)}}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&trialState==='RECORDING')requestWakeLock()});
+function updatePhoneEnvironment(){const el=$('mobileSupport');if(!el)return;if(!isPhoneView()){el.style.display='none';return}el.style.display='block';if(!window.isSecureContext){el.className='mobileSupport bad';el.textContent='HTTPS is required for Bluetooth. Open the deployed Cloudflare HTTPS site.';return}if(!navigator.bluetooth){el.className='mobileSupport bad';el.textContent='Web Bluetooth is not available in this browser. On Android use Chrome or a Chromium browser.';return}el.className='mobileSupport ok';el.textContent='Phone BLE ready. Keep Bluetooth on and close nRF Connect before connecting.'}
+function setFieldView(enabled){document.body.classList.toggle('mobileFieldMode',enabled);const b=$('fieldViewBtn');if(b)b.textContent=enabled?'☰ FULL':'⌖ FIELD'}
+$('fieldViewBtn').onclick=()=>setFieldView(!document.body.classList.contains('mobileFieldMode'));
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstallPrompt=e;const b=$('installBtn');if(b)b.classList.add('show')});
+$('installBtn').onclick=async()=>{if(!deferredInstallPrompt)return;deferredInstallPrompt.prompt();await deferredInstallPrompt.userChoice;deferredInstallPrompt=null;$('installBtn').classList.remove('show')};
+window.addEventListener('appinstalled',()=>{$('installBtn')?.classList.remove('show')});
+if(isPhoneView())setFieldView(true);updatePhoneEnvironment();window.addEventListener('resize',()=>{updatePhoneEnvironment();if(isPhoneView()&&!document.body.dataset.mobileInitialized){setFieldView(true);document.body.dataset.mobileInitialized='1'}});
+loadProfile();loadFieldData();drawTargetFace();updateHitReadout();setConnection(false);setTrialState('READY');updateModeUi();renderHistory();renderAnalytics();
+loadVisionApiUrl();restoreVisionReference();setResultEntryMode('VISION');
+updateVoiceButtons();if(!SpeechRecognitionCtor)setVoiceStatus('Voice recognition is not available in this browser. Use current Chrome for the field test.','bad');
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(console.warn))}
+</script>
+</body>
+</html>

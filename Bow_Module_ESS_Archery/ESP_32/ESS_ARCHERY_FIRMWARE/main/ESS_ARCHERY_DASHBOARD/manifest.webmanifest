@@ -1,0 +1,19 @@
+{
+  "name": "ESS-ARCHERY Field App V1.4 Coordinate Target",
+  "short_name": "ESS-ARCHERY",
+  "description": "Mobile-first BLE field dashboard with coordinate target logging for ESS-Archery",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#020305",
+  "theme_color": "#020305",
+  "icons": [
+    {
+      "src": "archer_logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
