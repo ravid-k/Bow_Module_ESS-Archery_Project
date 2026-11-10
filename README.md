@@ -1,4 +1,4 @@
-# ESS-Archery — Electronic Stability System for Archery 🎯
+# ESS-Archery - Electronic Stability System for Archery 🎯
 
 **ESS-Archery** is an experimental sports-electronics project exploring how embedded sensing, motion analysis and computer vision can be combined to better understand an archer’s bow stability and shot outcome.
 
